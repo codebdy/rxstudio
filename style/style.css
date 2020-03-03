@@ -54,14 +54,48 @@ a:hover{
 .vular-studio .button{
   display: flex;
   align-items: center;
+  cursor: pointer;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 3px;
+  color:#fff;
 }
+
+.vular-studio .button:hover{
+  background: #494d44;
+}
+
 .vular-studio .button i{
-  font-size: 16px;
   margin-right: 5px;
+  font-size: 16px;
+}
+
+.vular-studio .button.new i{
+  color:#9da98d;
+}
+
+.vular-studio .button.open i{
+  color:#9e71a5;
+}
+
+.vular-studio .button.save i{
+  color:#8cdb27;
+}
+
+.vular-studio .button.about i{
+  color:#d8d2f4;
+}
+
+.vular-studio .toolbar .left{
+  padding-left: 10px;
+  display: flex;
+  flex-flow: row;
 }
 
 .vular-studio .toolbar .right{
   padding-right: 10px;
+  display: flex;
+  flex-flow: row;
 }
 
 .vular-studio .workspace{
