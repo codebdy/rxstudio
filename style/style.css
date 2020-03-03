@@ -19,6 +19,8 @@ html,body {
     margin:0;
     height:100%;
     min-height:100%;
+    font-size: 13px;
+    color: #ccc;
 }
 
 .vular-studio{
@@ -46,11 +48,14 @@ html,body {
 
 .vular-studio .left-area{
   width: 280px;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row;
+  border:solid #1a1a1a 1px;
 }
 
-.vular-studio .left-handle{
-  width: 5px;
-  background: #000;
+.vular-studio .left-area .left-handle{
+  width: 3px;
   cursor: w-resize;
 }
 
@@ -60,14 +65,22 @@ html,body {
   flex-flow: column;
 }
 
-.vular-studio .right-handle{
-  width: 5px;
-  background: #000;
-  cursor: w-resize;
-}
 
 .vular-studio .right-area{
   width: 280px;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row;
+  border:solid #1a1a1a 1px;
+}
+
+.vular-studio .right-area .right-inner{
+  flex:1;
+}
+
+.vular-studio .right-area .right-handle{
+  width: 3px;
+  cursor: w-resize;
 }
 
 .vular-studio .center-area .content{
@@ -75,13 +88,21 @@ html,body {
   display: flex;
   flex-flow: column;
 }
-.vular-studio .center-area .bottom-handle{
-  height: 5px;
-  background: #000;
-  cursor: s-resize;
-}
 .vular-studio .center-area .bottom{
   height: 180px;
+  display: flex;
+  flex-flow: column;
+  border-top:solid #1a1a1a 1px;
+}
+
+.vular-studio .center-area .bottom .bottom-inner{
+  flex: 1;
+  display: flex;
+}
+
+.vular-studio .center-area .bottom-handle{
+  height: 3px;
+  cursor: s-resize;
 }
 
 .vular-studio .center-area .content .tab-heads{
@@ -98,7 +119,7 @@ html,body {
   padding-right: 10px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
 }
 
 .vular-studio .center-area .tab-heads .head-item.active{
@@ -137,6 +158,91 @@ html,body {
 }
 
 .vular-studio .center-area .content .page-content{
+  display: flex;
   flex: 1;
+  flex-flow: row;
+  padding: 10px;
+}
+
+.vular-studio .center-area .content .content-scroll{
+  overflow-x: auto;
+  flex-grow: 1;
+  height: 100%;
+  width: 0;
+}
+
+.vular-studio .center-area  .canvars{
   background: #fff;
+  width: 1200px;
+  height: 100%;
+}
+
+.vular-studio .widget-tabs{
+  display: flex;
+  flex-flow: column;
+}
+
+.vular-studio .widget-tabs .heads{
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+  font-size: 12px;
+  height: 32px;
+  align-items: flex-end;
+}
+
+.vular-studio .widget-tabs .heads .item{
+  padding: 0 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: default;
+  border-radius: 3px 3px 0 0;
+  border-top:solid #222 1px;
+}
+
+.vular-studio .widget-tabs .heads .item.active{
+  color: #fff;
+  background: #323332;
+  border-right:solid #222 1px;
+  border-left:solid #222 1px;
+  border-top:solid #222 1px;
+}
+
+.vular-studio .widget-tabs .tab-body{
+  width: 100%;
+  flex: 1;
+  background: #323332;
+  border-radius: 2px;
+  border-right:solid #222 1px;
+  border-bottom:solid #222 1px;
+  border-left:solid #222 1px;
+}
+
+.vular-studio .left-area .left-inner{
+  flex:1;
+  display: flex;
+  flex-flow: column;
+}
+
+.vular-studio .left-inner .left-top{
+  flex: 1;
+}
+
+.vular-studio .left-inner .left-bottom{
+  height: 280px;
+}
+
+.vular-studio .right-area .right-inner{
+  flex:1;
+  display: flex;
+  flex-flow: column;
+}
+
+.vular-studio .right-inner .right-top{
+  flex: 1;
+}
+
+.vular-studio .right-inner .right-bottom{
+  height: 280px;
 }
