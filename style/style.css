@@ -50,12 +50,12 @@ a:hover{
 .vular-studio .toolbar{
   display: flex;
   width: 100%;
-  height: 44px; 
+  height: 40px; 
   background: #363932;
   align-items: center;
   justify-content: space-between;
 }
-.vular-studio .button{
+.vular-studio .toolbar .button{
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -65,31 +65,31 @@ a:hover{
   color:#fff;
 }
 
-.vular-studio .button:hover{
+.vular-studio .toolbar .button:hover{
   background: #494d44;
 }
 
-.vular-studio .button i{
+.vular-studio .toolbar .button i{
   margin-right: 5px;
   font-size: 16px;
 }
 
-.vular-studio .button.new i{
+.vular-studio .toolbar .button.new i{
   color:#9da98d;
 }
 
-.vular-studio .button.open i{
+.vular-studio .toolbar .button.open i{
   color:#9e71a5;
 }
 
-.vular-studio .button.save i{
+.vular-studio .toolbar .button.save i{
   color:#8cdb27;
 }
 
-.vular-studio .button.about i{
+.vular-studio .toolbar .button.about i{
   color:#d8d2f4;
 }
-.vular-studio .button.download i{
+.vular-studio .toolbar .button.download i{
   color:#bdcbaa;
 }
 
@@ -124,7 +124,7 @@ a:hover{
   border:solid #1a1a1a 1px;
 }
 
-.vular-studio .left-area .left-handle{
+.vular-studio .x-handle{
   width: 3px;
   cursor: w-resize;
 }
@@ -148,11 +148,6 @@ a:hover{
   flex:1;
 }
 
-.vular-studio .right-area .right-handle{
-  width: 3px;
-  cursor: w-resize;
-}
-
 .vular-studio .center-area .content{
   flex: 1;
   display: flex;
@@ -170,7 +165,7 @@ a:hover{
   display: flex;
 }
 
-.vular-studio .center-area .bottom-handle{
+.vular-studio .y-handle{
   height: 3px;
   cursor: s-resize;
 }
@@ -274,7 +269,7 @@ a:hover{
 .vular-studio .content-scroll{
   overflow: auto;
   flex-grow: 1;
-  height: calc(100vh - 310px);
+  height: calc(100vh - 318px);
   width: 0;
 }
 
@@ -304,7 +299,7 @@ a:hover{
   flex-flow: row;
   justify-content:flex-start;
   font-size: 12px;
-  height: 32px;
+  height: 30px;
   align-items: flex-end;
 }
 
