@@ -1,6 +1,6 @@
 ::-webkit-scrollbar {
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background: #232323;
 }
 ::-webkit-scrollbar-track {
@@ -13,6 +13,10 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #606060;
+}
+
+::-webkit-scrollbar-corner{
+  background: #232323;
 }
 
 html,body {
@@ -85,6 +89,11 @@ a:hover{
 .vular-studio .button.about i{
   color:#d8d2f4;
 }
+.vular-studio .button.download i{
+  color:#bdcbaa;
+}
+
+
 
 .vular-studio .toolbar .left{
   padding-left: 10px;
@@ -204,7 +213,6 @@ a:hover{
 
 .vular-studio .center-area .tab-heads .head-item .close:hover{
   background: #e62121;
-
 }
 
 .vular-studio .center-area .content .tab-body{
@@ -213,9 +221,47 @@ a:hover{
   flex-flow: column;
 }
 
-.vular-studio .center-area .content .page-toolbar{
+.vular-studio .center-area .page-toolbar{
   height: 35px;
   background: #494c45;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vular-studio .page-toolbar .left{
+  margin-left:10px;
+  display: flex;
+  flex-flow: row;
+}
+
+.vular-studio .page-toolbar .right{
+  margin-right:10px;
+  display: flex;
+  flex-flow: row;
+}
+
+.vular-studio .page-toolbar .icon-button{
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:1px;
+  border-radius: 2px;
+}
+
+.vular-studio .page-toolbar .icon-button:hover{
+  background: #272727;
+}
+
+.vular-studio .page-toolbar .icon-button.active{
+  background: #272727;
+}
+
+.vular-studio .page-toolbar .icon-button.big i{
+  font-size: 14px;
 }
 
 .vular-studio .center-area .content .page-content{
