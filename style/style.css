@@ -23,6 +23,14 @@ html,body {
     color: #ccc;
 }
 
+a{
+  color:#fff;
+  text-decoration: none;
+}
+a:hover{
+  color:#75b325;
+}
+
 .vular-studio{
   display: flex;
   display: -webkit-flex;
@@ -31,10 +39,29 @@ html,body {
   flex-flow:column;
 }
 
+.vular-studio .logo{
+  color:#75b325; font-size:22px;font-weight:600;
+}
+
 .vular-studio .toolbar{
+  display: flex;
   width: 100%;
   height: 44px; 
-  background: #3c3d3b;
+  background: #363932;
+  align-items: center;
+  justify-content: space-between;
+}
+.vular-studio .button{
+  display: flex;
+  align-items: center;
+}
+.vular-studio .button i{
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.vular-studio .toolbar .right{
+  padding-right: 10px;
 }
 
 .vular-studio .workspace{
