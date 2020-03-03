@@ -122,6 +122,7 @@ a:hover{
   display: -webkit-flex;
   flex-flow: row;
   border:solid #1a1a1a 1px;
+  padding-top:3px;
 }
 
 .vular-studio .x-handle{
@@ -142,6 +143,7 @@ a:hover{
   display: -webkit-flex;
   flex-flow: row;
   border:solid #1a1a1a 1px;
+  padding-top:3px;
 }
 
 .vular-studio .right-area .right-inner{
