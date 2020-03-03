@@ -117,7 +117,7 @@ a:hover{
 }
 
 .vular-studio .left-area{
-  width: 280px;
+  width: 220px;
   display: flex;
   display: -webkit-flex;
   flex-flow: row;
@@ -331,6 +331,16 @@ a:hover{
   border-right:solid #222 1px;
   border-bottom:solid #222 1px;
   border-left:solid #222 1px;
+  display: flex;
+  flex-flow: column;
+}
+
+.vular-studio .widget-tabs .tab-body-inner{
+  flex: 1;
+  padding:5px;
+  display: flex;
+  flex-flow: column;
+  height: 0;
 }
 
 .vular-studio .left-area .left-inner{
@@ -360,3 +370,99 @@ a:hover{
 .vular-studio .right-inner .right-bottom{
   height: 280px;
 }
+
+/*==tool Box=======>*/
+.vular-studio .toolbox{
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  height: 0;
+  display: flex;
+  flex-flow: column;
+  margin-top:-2px;
+}
+.vular-studio .toolbox .tool-group{
+  display: flex;
+  flex-flow: column;
+}
+.vular-studio .toolbox .group-title{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  height: 30px;
+  color:#f0f1ef;
+  padding-left: 10px;
+  padding-bottom:3px;
+  position: relative;
+  border-top:#484848 solid 1px;
+  border-bottom:#282828 solid 1px;
+}
+
+.vular-studio .toolbox .no-title-top-border .group-title{
+  border-top:transparent solid 1px;
+  cursor: default;
+}
+
+.vular-studio .toolbox .tool-group .group-title small{
+  color: #aaa;
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+
+.vular-studio .toolbox .tool-group .group-title::after{
+  position: absolute;
+  content: '';
+  width: 0; 
+  height: 0;
+  top: 16px;
+  right: 19px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #f0f1ef transparent transparent  transparent;
+}
+
+.vular-studio .toolbox .group-body{
+  border-top:#282828 solid 1px;
+  padding: 10px;
+}
+
+.vular-studio .toolbox .tool-group.group-collapse .group-title::after{
+  position: absolute;
+  content: '';
+  width: 0; 
+  height: 0;
+  top: 12px;
+  right: 17px;
+  border-width: 4px;
+  border-style: solid;
+  border-color:transparent transparent  transparent #f0f1ef;
+}
+
+.vular-studio .toolbox .tool-group.group-collapse .group-body{
+  display: none;
+}
+
+.vular-studio .toolbox .group-body .element{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: move;
+  color: #c2c2c2;
+  font-size: 13px;
+  padding:5px 5px;
+  margin:3px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vular-studio .toolbox .group-body .element:hover{
+  color: #75b325;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4); 
+}
+
+
+/*<==tool Box=======*/
