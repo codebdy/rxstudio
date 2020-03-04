@@ -26,6 +26,8 @@ export default {
       width:220,
     }
   },
+  created () {
+  },
   methods: {
     widthChange(movement){
       this.width += movement

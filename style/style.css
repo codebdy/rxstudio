@@ -314,6 +314,7 @@ a:hover{
 
 
 .vular-studio .widget-tabs{
+  flex:1;
   display: flex;
   flex-flow: column;
 }
@@ -325,6 +326,9 @@ a:hover{
   font-size: 12px;
   height: 30px;
   align-items: flex-end;
+  list-style: none;
+  padding:0;
+  margin:0;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -379,7 +383,8 @@ a:hover{
 .vular-studio .top-area{
   flex: 1;
   border-bottom:solid #222 1px;
-  background: #555;
+  display: flex;
+  flex-flow: column;
 }
 
 .vular-studio .left-inner .left-top{
