@@ -54,6 +54,12 @@ a:hover{
   background: #363932;
   align-items: center;
   justify-content: space-between;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
 }
 .vular-studio .toolbar .button{
   display: flex;
@@ -117,17 +123,23 @@ a:hover{
 }
 
 .vular-studio .left-area{
-  width: 220px;
+  //width: 220px;
   display: flex;
   display: -webkit-flex;
   flex-flow: row;
   border:solid #1a1a1a 1px;
   padding-top:3px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .vular-studio .x-handle{
   width: 3px;
   cursor: w-resize;
+  z-index: 10;
 }
 
 .vular-studio .center-area{
@@ -138,12 +150,16 @@ a:hover{
 
 
 .vular-studio .right-area{
-  width: 280px;
   display: flex;
   display: -webkit-flex;
   flex-flow: row;
   border:solid #1a1a1a 1px;
   padding-top:3px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .vular-studio .right-area .right-inner{
@@ -170,12 +186,18 @@ a:hover{
 .vular-studio .y-handle{
   height: 3px;
   cursor: s-resize;
+  z-index: 10;
 }
 
 .vular-studio .center-area .content .tab-heads{
   height: 33px;
   display: flex;
   align-items: flex-end;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .vular-studio .center-area .tab-heads .head-item{
@@ -271,7 +293,7 @@ a:hover{
 .vular-studio .content-scroll{
   overflow: auto;
   flex-grow: 1;
-  height: calc(100vh - 318px);
+  height: calc(100vh - 130px);
   width: 0;
 }
 
@@ -303,6 +325,11 @@ a:hover{
   font-size: 12px;
   height: 30px;
   align-items: flex-end;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .vular-studio .widget-tabs .heads .item{

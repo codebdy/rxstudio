@@ -59,26 +59,19 @@
             <div class="y-handle">
             </div>
           </div>
-          <div class="bottom">
-              <div class="widget-tabs bottom-inner">
-                <div class="heads">
-                  <div class="item active">HTML</div>
-                  <div class="item">CSS</div>
-                </div>
-                <div class="tab-body">
-                  <div></div>
-                </div>
-              </div>
-            
-          </div>
         </div>
 </template>
 
 <script>
+import YHandle from './YHandle.vue'
 export default {
   name: 'CenterArea',
+  components:{
+    YHandle,
+  },
   data () {
     return {
+      width:220,
     }
   }
 }

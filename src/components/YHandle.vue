@@ -1,16 +1,16 @@
 <template>
-  <div class="x-handle" 
+  <div class="y-handle" 
     @mousedown="mouseDown" 
   ></div>
 </template>
 
 <script>
 export default {
-  name: 'XHandle',
+  name: 'YHandle',
   data () {
     return {
       //dragging : false,
-      lastX:''
+      lastY:''
     }
   },
 
@@ -26,14 +26,14 @@ export default {
   methods: {
     mouseDown(event){
       document.addEventListener('mousemove', this.mouseMove)
-      this.lastX = event.screenX
+      this.lastY = event.screenY
     },
     mouseMove(event){
-      this.$emit('widthChange', event.screenX - this.lastX)
-      this.lastX = event.screenX
+      this.$emit('heightChange', event.screenX - this.lastX)
+      this.lastY = event.screenY
     },
     mouseUp(event){
-      this.lastX = ''
+      this.lastY = ''
       document.removeEventListener('mousemove', this.mouseMove)
     },
   },

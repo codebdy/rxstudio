@@ -1,39 +1,34 @@
 <template>
-        <div class="right-area">
-          <div class="x-handle"></div>
-          <div class="right-inner">
-            <div class="widget-tabs right-top">
-              <div class="heads">
-                <div class="item active">Options</div>
-                <div class="item">Code</div>
-                <div class="item">Animation</div>
-                <div class="item">Style</div>
-              </div>
-              <div class="tab-body">
-                <div></div>
-              </div>
-            </div>
-            <div class="widget-tabs right-bottom">
-              <div class="y-handle">
-              </div>
-              <div class="heads">
-                <div class="item active">Overview</div>
-              </div>
-              <div class="tab-body">
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="right-area" :style="{width:width + 'px'}">
+    <XHandle @widthChange="widthChange"></XHandle>
+    <div class="right-inner">
+    </div>
+  </div>
 </template>
 
 <script>
+import XHandle from './XHandle.vue'
 export default {
   name: 'RightArea',
+  components:{
+    XHandle,
+  },
   data () {
     return {
+      width:280,
     }
-  }
+  },
+  methods: {
+    widthChange(movement){
+      this.width -= movement
+      if(this.width < 50){
+        this.width = 50
+      }
+      if(this.width > 600){
+        this.width = 600
+      }
+    },
+  },
 }
 </script>
 
