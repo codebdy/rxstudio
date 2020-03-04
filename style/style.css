@@ -376,6 +376,12 @@ a:hover{
   flex-flow: column;
 }
 
+.vular-studio .top-area{
+  flex: 1;
+  border-bottom:solid #222 1px;
+  background: #555;
+}
+
 .vular-studio .left-inner .left-top{
   flex: 1;
 }

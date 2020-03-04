@@ -29,7 +29,8 @@ export default {
       this.lastY = event.screenY
     },
     mouseMove(event){
-      this.$emit('heightChange', event.screenX - this.lastX)
+      console.log('move')
+      this.$emit('heightChange', this.lastY - event.screenY)
       this.lastY = event.screenY
     },
     mouseUp(event){

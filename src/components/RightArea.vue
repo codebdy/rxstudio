@@ -2,16 +2,24 @@
   <div class="right-area" :style="{width:width + 'px'}">
     <XHandle @widthChange="widthChange"></XHandle>
     <div class="right-inner">
+      <div class="top-area">
+        <slot name="top"></slot>
+      </div>
+      <BottomArea>
+        <slot name="bottom"></slot>
+      </BottomArea>
     </div>
   </div>
 </template>
 
 <script>
 import XHandle from './XHandle.vue'
+import BottomArea from './BottomArea.vue'
 export default {
   name: 'RightArea',
   components:{
     XHandle,
+    BottomArea,
   },
   data () {
     return {

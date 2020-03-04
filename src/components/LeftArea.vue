@@ -1,6 +1,12 @@
 <template>
   <div class="left-area" :style="{width:width + 'px'}">
     <div class="left-inner">
+      <div class="top-area">
+        <slot name="top"></slot>
+      </div>
+      <BottomArea>
+        <slot name="bottom"></slot>
+      </BottomArea>
     </div>
     <XHandle @widthChange="widthChange"></XHandle>
   </div>
@@ -8,10 +14,12 @@
 
 <script>
 import XHandle from './XHandle.vue'
+import BottomArea from './BottomArea.vue'
 export default {
   name: 'LeftArea',
   components:{
     XHandle,
+    BottomArea,
   },
   data () {
     return {

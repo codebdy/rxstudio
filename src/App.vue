@@ -2,9 +2,23 @@
   <div id="app" class="vular-studio">
     <toolbar />
     <div class="workspace">
-      <LeftArea></LeftArea>
+      <LeftArea>
+        <template v-slot:top>
+          left top
+        </template>
+        <template v-slot:bottom>
+          left bottom
+        </template>
+      </LeftArea>
       <CenterArea></CenterArea>
-      <RightArea></RightArea>
+      <RightArea>
+        <template v-slot:top>
+          right top
+        </template>
+        <template v-slot:bottom>
+          right bottom
+        </template>
+      </RightArea>
     </div>
   </div>
 </template>

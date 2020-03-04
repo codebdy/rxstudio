@@ -56,22 +56,17 @@
                 </div>
               </div>
             </div>
-            <div class="y-handle">
-            </div>
           </div>
         </div>
 </template>
 
 <script>
-import YHandle from './YHandle.vue'
 export default {
   name: 'CenterArea',
   components:{
-    YHandle,
   },
   data () {
     return {
-      width:220,
     }
   }
 }
