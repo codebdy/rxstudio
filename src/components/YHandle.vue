@@ -9,7 +9,6 @@ export default {
   name: 'YHandle',
   data () {
     return {
-      //dragging : false,
       lastY:''
     }
   },

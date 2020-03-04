@@ -293,7 +293,7 @@ a:hover{
 .vular-studio .content-scroll{
   overflow: auto;
   flex-grow: 1;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 318px);
   width: 0;
 }
 
