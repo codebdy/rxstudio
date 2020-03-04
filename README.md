@@ -1,6 +1,6 @@
 # studio-ui
 
-> A Vue.js project
+> 2020-03-04（一）：鼠标拖动改变窗口大小
 
 ## Build Setup
 
