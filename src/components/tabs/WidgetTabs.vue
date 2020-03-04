@@ -1,8 +1,9 @@
 <template>
   <div class="widget-tabs">
     <ul  class="heads">
-      <li v-for="tab in tabs" class="item" :class="{ 'active': tab.isActive }">
-          <a :href="tab.href" @click="selectTab(tab)">{{ tab.name }}</a>
+      <li v-for="tab in tabs" class="item" :class="{ 'active': tab.isActive }" 
+        @click="selectTab(tab)">
+          {{ tab.name }}
       </li>
     </ul>
     <div class="tab-body">
@@ -13,7 +14,7 @@
 
 <script>
 export default {
-  name: 'TabsWidget',
+  name: 'WidgetTabs',
   data() {
     return {tabs: [] };
   },

@@ -44,7 +44,9 @@ a:hover{
 }
 
 .vular-studio .logo{
-  color:#75b325; font-size:22px;font-weight:600;
+  color:#8cdb27; 
+  font-size:22px;
+  font-weight:600;
 }
 
 .vular-studio .toolbar{
@@ -89,7 +91,7 @@ a:hover{
 }
 
 .vular-studio .toolbar .button.save i{
-  color:#8cdb27;
+  color:#75b325;
 }
 
 .vular-studio .toolbar .button.about i{
@@ -160,21 +162,10 @@ a:hover{
   flex:1;
 }
 
-.vular-studio .center-area .content{
+.vular-studio .page-tabs{
   flex: 1;
   display: flex;
   flex-flow: column;
-}
-.vular-studio .center-area .bottom{
-  height: 180px;
-  display: flex;
-  flex-flow: column;
-  border-top:solid #1a1a1a 1px;
-}
-
-.vular-studio .center-area .bottom .bottom-inner{
-  flex: 1;
-  display: flex;
 }
 
 .vular-studio .x-handle{
@@ -189,10 +180,14 @@ a:hover{
   z-index: 10;
 }
 
-.vular-studio .center-area .content .tab-heads{
+.vular-studio .page-tabs .tab-heads{
   height: 33px;
   display: flex;
   align-items: flex-end;
+
+  list-style: none;
+  margin:0;
+  padding:0;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -200,7 +195,7 @@ a:hover{
   user-select: none;
 }
 
-.vular-studio .center-area .tab-heads .head-item{
+.vular-studio .page-tabs .tab-heads .head-item{
   height: 30px;
   font-size: 12px;
   color:#FFF;
@@ -211,12 +206,12 @@ a:hover{
   cursor: default;
 }
 
-.vular-studio .center-area .tab-heads .head-item.active{
+.vular-studio .page-tabs .tab-heads .head-item.active{
   background: #494c45;
   border-radius: 3px 3px 0 0;
 }
 
-.vular-studio .center-area .tab-heads .head-item .close{
+.vular-studio .page-tabs .tab-heads .head-item .close{
   margin-left: 10px;
   background: #272727;
   width: 16px;
@@ -230,17 +225,17 @@ a:hover{
   font-weight: bold;
 }
 
-.vular-studio .center-area .tab-heads .head-item .close:hover{
+.vular-studio .page-tabs .tab-heads .head-item .close:hover{
   background: #e62121;
 }
 
-.vular-studio .center-area .content .tab-body{
+.vular-studio .page-tabs .tab-body{
   flex: 1;
   display: flex;
   flex-flow: column;
 }
 
-.vular-studio .center-area .page-toolbar{
+.vular-studio .page-tabs .page-toolbar{
   height: 35px;
   background: #494c45;
   display: flex;
@@ -283,7 +278,7 @@ a:hover{
   font-size: 14px;
 }
 
-.vular-studio .center-area .content .page-content{
+.vular-studio .center-area .page-content{
   display: flex;
   flex: 1;
   flex-flow: row;
@@ -297,7 +292,7 @@ a:hover{
   width: 0;
 }
 
-.vular-studio .center-area  .canvars{
+.vular-studio .page-tabs  .canvars{
   background: #fff;
   width: 1200px;
   height: 1000px;
