@@ -22,8 +22,8 @@ export default {
   methods: {
     heightChange(movement){
       this.height += movement
-      if(this.height < 30){
-        this.height = 30
+      if(this.height < 60){
+        this.height = 60
       }
       if(this.height > 600){
         this.height = 600

@@ -57,7 +57,6 @@ class State{
     if(this.context.state !== state){
       if(this.context.state === this.context.normalState){
         this.context.selectedTab.isShow = false
-        console.log('dddd')
       }
       if(state === this.context.normalState){
         this.context.selectedTab.isShow = true

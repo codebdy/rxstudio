@@ -144,7 +144,7 @@
               <h1>动画</h1>
             </tab>
             <tab :name="$t('widgets.style')"
-                 :icon="'fas fa-palette'">
+                 :icon="'fab fa-css3'">
               <h1>Style</h1>
             </tab>
           </WidgetTabs>
