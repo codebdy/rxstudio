@@ -56,9 +56,8 @@ class State{
   toState(state){
     if(this.context.state !== state){
       if(this.context.state === this.context.normalState){
-        if(this.context.selectedTab){
-          this.context.selectedTab.isShow = false
-        }
+        this.context.selectedTab.isShow = false
+        console.log('dddd')
       }
       if(state === this.context.normalState){
         this.context.selectedTab.isShow = true
@@ -80,7 +79,7 @@ class NormalState extends State{
   clickTab(clickedTab){
     this.context.tabs.forEach(tab => {
       tab.isShow = (tab.name == clickedTab.name)
-      this.selectedTab = clickedTab
+        this.context.selectedTab = clickedTab
     });
   }
 }
