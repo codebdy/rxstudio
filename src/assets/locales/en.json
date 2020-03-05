@@ -10,7 +10,8 @@
 
   "widgets":{
     "studio" : "Studio",
-    "files" : "Files"
+    "files" : "Files",
+    "overview" : "Overview"
   }
 
 }

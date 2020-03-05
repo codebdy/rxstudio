@@ -17,7 +17,13 @@
           </WidgetTabs>
         </template>
         <template #bottom>
-          left bottom
+          <WidgetTabs>
+            <tab :name="$t('widgets.overview')"
+                 :icon="'fas fa-th-list'" 
+                 :selected="true">
+              <h1>List view</h1>
+            </tab>
+          </WidgetTabs>
         </template>
       </LeftArea>
       <CenterArea>
@@ -123,7 +129,17 @@
       </CenterArea>
       <RightArea>
         <template #top>
-          right top
+          <WidgetTabs>
+            <tab :name="$t('widgets.studio')"
+                 :icon="'fas fa-puzzle-piece'" 
+                 :selected="true">
+              <h1>Studio Content</h1>
+            </tab>
+            <tab :name="$t('widgets.files')"
+                 :icon="'fas fa-copy'">
+              <h1>Files List</h1>
+            </tab>
+          </WidgetTabs>
         </template>
         <template #bottom>
           right bottom

@@ -7,7 +7,7 @@
         <span v-show="showTitle"> {{ tab.name }}</span>
       </li>
     </ul>
-    <div v-show="showTabBody" class="tab-body">
+    <div v-show="showTabBody" class="tab-body" :class="dockLeft?'dock-left':''">
       <div v-show="showTabTitle" class="tab-title">
         <div>{{selectedTab ? selectedTab.name : ''}}</div>
         <div class="tab-close" @click="close">×</div>
@@ -113,8 +113,13 @@ class ListState extends State{
 
   clickTab(clickedTab){
     this.context.tabs.forEach(tab => {
-      tab.isShow = (tab === clickedTab)
-      this.context.selectedTab = clickedTab
+      if(tab === clickedTab){
+        tab.isShow = !tab.isShow
+        this.context.selectedTab = clickedTab
+      }
+      else{
+        tab.isShow = false
+      }
     });
   }
 }
@@ -152,6 +157,7 @@ export default {
       tabs: [],
       state: null,
       selectedTab :null,
+      dockLeft:false,
     }
   },
   
@@ -190,7 +196,10 @@ export default {
     },
 
     mouseMove(){
-      this.state.widthChange(this.$refs.widget.offsetWidth)
+      if(this.$refs.widget){
+        this.dockLeft = this.$refs.widget.offsetLeft < 50
+        this.state.widthChange(this.$refs.widget.offsetWidth)
+      }
     },
 
     mouseDown(event){
@@ -221,9 +230,6 @@ export default {
     document.removeEventListener('mousedown', this.mouseDown)
     document.removeEventListener('mouseup', this.mouseUp)
   },
-
-
-
 }
 </script>
 
@@ -350,12 +356,16 @@ export default {
 .middle-size.widget-tabs .tab-body,
 .mini-size.widget-tabs .tab-body{
   position: absolute;
-  left:100%;
-  top: 0;
+  right:100%;
+  top: -3px;
   z-index: 1000;
   min-width: 220px;
   min-height: 300px;
   border-radius: 0;
+}
+.middle-size.widget-tabs .tab-body.dock-left,
+.mini-size.widget-tabs .tab-body.dock-left{
+  left:100%;
 }
 
 .middle-size.widget-tabs .tab-body-inner{
