@@ -1,5 +1,5 @@
 <template>
-  <div class="left-area" :class="sizeClass" :style="{width:width + 'px'}">
+  <div class="left-area" :class="sizeClass" :style="{width:(width <= 90 ? 60 : width) + 'px'}">
     <div class="left-inner">
       <div class="top-area">
         <slot name="top"></slot>

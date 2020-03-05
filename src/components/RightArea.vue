@@ -1,5 +1,5 @@
 <template>
-  <div class="right-area" :style="{width:width + 'px'}">
+  <div class="right-area" :style="{width:(width <= 90 ? 60 : width) + 'px'}">
     <XHandle @widthChange="widthChange"></XHandle>
     <div class="right-inner">
       <div class="top-area">
