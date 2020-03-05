@@ -1,0 +1,10 @@
+{
+  "toolbar": {
+    "new" : "New",
+    "open" : "Open",
+    "save" : "Save",
+    "download" : "Download",
+    "about" : "About",
+    "github" : "Github"
+  }
+}
