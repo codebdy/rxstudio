@@ -18,8 +18,8 @@
         </template>
         <template #bottom>
           <WidgetTabs>
-            <tab :name="$t('widgets.overview')"
-                 :icon="'fas fa-th-list'" 
+            <tab :name="$t('widgets.treeview')"
+                 :icon="'fas fa-code-branch'" 
                  :selected="true">
               <h1>List view</h1>
             </tab>
@@ -130,19 +130,33 @@
       <RightArea>
         <template #top>
           <WidgetTabs>
-            <tab :name="$t('widgets.studio')"
-                 :icon="'fas fa-puzzle-piece'" 
+            <tab :name="$t('widgets.options')"
+                 :icon="'fas fa-paint-brush'" 
                  :selected="true">
-              <h1>Studio Content</h1>
+              <h1>options Content</h1>
             </tab>
-            <tab :name="$t('widgets.files')"
-                 :icon="'fas fa-copy'">
-              <h1>Files List</h1>
+            <tab :name="$t('widgets.code')"
+                 :icon="'fas fa-code'">
+              <h1>code List</h1>
+            </tab>
+            <tab :name="$t('widgets.anmation')"
+                 :icon="'fab fa-windows'">
+              <h1>动画</h1>
+            </tab>
+            <tab :name="$t('widgets.style')"
+                 :icon="'fas fa-palette'">
+              <h1>Style</h1>
             </tab>
           </WidgetTabs>
         </template>
         <template #bottom>
-          right bottom
+          <WidgetTabs>
+            <tab :name="$t('widgets.overview')"
+                 :icon="'fas fa-th-list'" 
+                 :selected="true">
+              <h1>Over view</h1>
+            </tab>
+          </WidgetTabs>
         </template>
       </RightArea>
     </div>

@@ -38,17 +38,6 @@ export default {
       if(this.width >= 600){
         this.width = 600
       }
-
-/*      if(this.width <= 120){
-        this.sizeClass = 'middle-size'
-      }
-      else if(this.width <= 90){
-        this.sizeClass = 'mini-size'
-      }
-      else{
-        this.sizeClass = ''
-      }*/
-
     },
   },
 }

@@ -11,6 +11,11 @@
   "widgets":{
     "studio" : "Studio",
     "files" : "Files",
+    "treeview" : "Tree View",
+    "options" : "Options",
+    "code" : "Code",
+    "anmation" : "Anmation",
+    "style" : "Style",
     "overview" : "Overview"
   }
 

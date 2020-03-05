@@ -29,10 +29,10 @@ export default {
   methods: {
     widthChange(movement){
       this.width -= movement
-      if(this.width < 50){
-        this.width = 50
+      if(this.width <= 60){
+        this.width = 60
       }
-      if(this.width > 600){
+      if(this.width >= 600){
         this.width = 600
       }
     },

@@ -125,7 +125,6 @@ a:hover{
 }
 
 .vular-studio .left-area{
-  //width: 220px;
   display: flex;
   display: -webkit-flex;
   flex-flow: row;
@@ -173,7 +172,6 @@ a:hover{
   flex-shrink: 1;
   cursor: w-resize;
   z-index: 10;
-  background: #fff;
 }
 
 .vular-studio .y-handle{
