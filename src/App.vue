@@ -5,10 +5,13 @@
       <LeftArea>
         <template #top>
           <WidgetTabs>
-            <tab :name="$t('widgets.studio')" :selected="true">
+            <tab :name="$t('widgets.studio')"
+                 :icon="'fas fa-puzzle-piece'" 
+                 :selected="true">
               <h1>Studio Content</h1>
             </tab>
-            <tab :name="$t('widgets.files')">
+            <tab :name="$t('widgets.files')"
+                 :icon="'fas fa-copy'">
               <h1>Files List</h1>
             </tab>
           </WidgetTabs>

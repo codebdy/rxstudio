@@ -3,12 +3,12 @@
     <ul  class="heads">
       <li v-for="tab in tabs" class="item" :class="{ 'active': tab.isShow }" 
         @click="click(tab)">
-        <div v-show="showIcon" class="tab-icon"><i :class="tab.icon"></i></div>
-        <span v-show="showTitle">{{ tab.name }}</span>
+        <div v-show="showIcon" class="tab-icon"><i :class="tab.icon"></i></div> 
+        <span v-show="showTitle"> {{ tab.name }}</span>
       </li>
     </ul>
     <div v-show="showTabBody" class="tab-body">
-      <div class="tab-title">
+      <div v-show="showTabTitle" class="tab-title">
         <div>{{selectedTab ? selectedTab.name : ''}}</div>
         <div class="tab-close" @click="close">×</div>
       </div>
@@ -24,11 +24,11 @@ class State{
   } 
 
   widthChange(width){
-    if(width <=160){
-      this.toState(this.context.middleState)
-    }
-    else if(width <=100){
+    if(width <=90){
       this.toState(this.context.miniState)
+    }
+    else if(width <=160){
+      this.toState(this.context.middleState)
     }
     else{
       this.toState(this.context.normalState)
@@ -37,6 +37,10 @@ class State{
 
   showTabBody(){
     return true
+  }
+
+  showTabTitle(){
+    return false
   }
 
   showIcon(){
@@ -89,6 +93,10 @@ class ListState extends State{
 
   showTabBody(){
     return this.context.selectedTab.isShow
+  }
+
+  showTabTitle(){
+    return true
   }
 
   showIcon(){
@@ -171,14 +179,14 @@ export default {
     showTabBody(){
       return this.state.showTabBody()
     },
+    showTabTitle(){
+      return this.state.showTabTitle()
+    },
   },
 
   methods: {
     click(clickTab) {
       this.state.clickTab(clickTab)
-      //this.tabs.forEach(tab => {
-      //  tab.isShow = (tab.name == selectedTab.name)
-      //});
     },
 
     mouseMove(){
@@ -232,6 +240,7 @@ export default {
     flex-wrap: wrap;
     justify-content:flex-start;
     font-size: 12px;
+    font-weight: bold;
     height: 30px;
     align-items: flex-end;
     list-style: none;
@@ -287,18 +296,19 @@ export default {
   }
 
 /*============ middle size===========================>*/
-.middle-size.widget-tabs{
+.middle-size.widget-tabs,
+.mini-size.widget-tabs{
   position: relative;
 }
 
-.middle-size.widget-tabs .tab-title{
+.widget-tabs .tab-title{
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   padding:3px 3px 3px 10px;
 }
 
-.middle-size.widget-tabs .tab-close{
+.widget-tabs .tab-close{
   font-size: 14px;
   display: flex;
   height: 16px;
@@ -310,27 +320,35 @@ export default {
   cursor: pointer;
 }
 
-.middle-size.widget-tabs .tab-close:hover{
+.widget-tabs .tab-close:hover{
   color:#fff;
 }
 
+.widget-tabs .heads .tab-icon{
+  margin-right: 10px;
+  font-size: 18px; 
+}
 
-.middle-size.widget-tabs .heads .item{
+.middle-size.widget-tabs .heads .item,
+.mini-size.widget-tabs .heads .item{
   display: block;
   width: 100%;
   display: flex;
   padding: 0 0 0 20px;
   margin: 0;
-  height: 50px;
+  height: 42px;
   border-radius: 0;
   border:0;
+  color:#fff;
 }
 
-.middle-size.widget-tabs .heads .item.active{
+.middle-size.widget-tabs .heads .item.active,
+.mini-size.widget-tabs .heads .item.active{
   background: #649920;
 }
 
-.middle-size.widget-tabs .tab-body{
+.middle-size.widget-tabs .tab-body,
+.mini-size.widget-tabs .tab-body{
   position: absolute;
   left:100%;
   top: 0;

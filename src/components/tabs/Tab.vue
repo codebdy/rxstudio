@@ -9,6 +9,7 @@ export default {
   name: 'Tab',
   props: {
     name: { required: true },
+    icon:'',
     selected: { default: false}
   },
   data() {
