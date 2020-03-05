@@ -1,6 +1,6 @@
 <template>
-  <div class="collapsible-item" :class="isActive ? 'active' : ''">
-    <div class="item-heading">
+  <div class="collapsible-item" :class="!isActive ? 'item-collapse' : ''">
+    <div class="item-heading" @click="click">
       <slot name="heading"></slot>
     </div>
     <div class="item-body">
@@ -19,6 +19,13 @@ export default {
     return {
       isActive: false
     };
+  },
+
+  methods: {
+    click() {
+      console.log('click')
+      this.$emit('itemClick', this)
+    }
   },
     
   mounted() {

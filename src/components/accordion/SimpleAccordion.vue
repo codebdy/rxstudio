@@ -11,17 +11,29 @@ export default {
     multiple: { default: false}
   },
   data() {
-    return {items: [] };
+    return {items: [] }
   },
   
   created() {
-    this.items = this.$children;
+    this.items = this.$children
   },
+
+  mounted () {
+    this.items.forEach(item=>{
+      item.$on('itemClick', this.itemClick)
+    })
+  },
+
   methods: {
-    selectItem(selectedItem) {
-      this.items.forEach(item => {
-        item.isShow = (item.name == selectedItem.name);
-      });
+    itemClick(clickedItem) {
+      clickedItem.isActive = !clickedItem.isActive
+      if(!this.multiple){
+        this.items.forEach(item => {
+          if(item !== clickedItem){
+            item.isActive = false
+          }
+        })
+      }
     }
   }
 }
@@ -31,7 +43,7 @@ export default {
   .simple-accordion{
     flex: 1;
     width: 100%;
-    overflow-y: auto;
+    overflow: auto;
     height: 0;
     display: flex;
     flex-flow: column;
@@ -40,15 +52,19 @@ export default {
   .simple-accordion .collapsible-item{
     display: flex;
     flex-flow: column;
+    width: 100%;
   }
   .simple-accordion .item-heading{
     display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
     align-items: center;
     font-size: 12px;
-    height: 30px;
     color:#f0f1ef;
     padding-left: 10px;
-    padding-bottom:3px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:20px;
     position: relative;
     border-top:#484848 solid 1px;
     border-bottom:#282828 solid 1px;
@@ -59,10 +75,14 @@ export default {
     background: #383838;
   }
 
+  .simple-accordion .collapsible-item .item-heading span{
+    margin-right: 5px;
+  }
+
   .simple-accordion .collapsible-item .item-heading small{
+    white-space:nowrap;
     color: #aaa;
     font-size: 11px;
-    margin-left: 5px;
   }
 
 
@@ -71,7 +91,7 @@ export default {
     content: '';
     width: 0; 
     height: 0;
-    top: 16px;
+    top: calc(50% -1px);
     right: 19px;
     border-width: 4px;
     border-style: solid;
@@ -88,7 +108,7 @@ export default {
     content: '';
     width: 0; 
     height: 0;
-    top: 12px;
+    top: calc(50% -1px);
     right: 17px;
     border-width: 4px;
     border-style: solid;

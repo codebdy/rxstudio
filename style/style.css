@@ -169,15 +169,14 @@ a:hover{
 
 .vular-studio .x-handle{
   width: 3px;
-  flex-shrink: 1;
+  flex-shrink: 0;
   cursor: w-resize;
-  z-index: 10;
 }
 
 .vular-studio .y-handle{
   height: 3px;
+  flex-shrink: 0;
   cursor: s-resize;
-  z-index: 10;
 }
 
 .vular-studio .page-tabs .tab-heads{
@@ -312,6 +311,7 @@ a:hover{
   flex:1;
   display: flex;
   flex-flow: column;
+  width: 100%;
 }
 
 .vular-studio .top-area{
@@ -319,6 +319,7 @@ a:hover{
   border-bottom:solid #222 1px;
   display: flex;
   flex-flow: column;
+  width: 100%;
 }
 
 .vular-studio .left-inner .left-top{

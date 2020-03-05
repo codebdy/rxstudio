@@ -275,6 +275,14 @@ export default {
     border-top:solid #222 1px;
   }
 
+  .widget-tabs .tab{
+    flex: 1;
+    height: 0;
+    display: flex;
+    flex-flow: column;
+    padding:5px;
+  }
+
   .widget-tabs .tab-body{
     width: 100%;
     flex: 1;

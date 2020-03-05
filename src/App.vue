@@ -5,10 +5,66 @@
       <LeftArea>
         <template #top>
           <WidgetTabs>
-            <tab :name="$t('widgets.studio')"
-                 :icon="'fas fa-puzzle-piece'" 
-                 :selected="true">
-              <h1>Studio Content</h1>
+            <tab 
+              :name="$t('widgets.studio')"
+              :icon="'fas fa-puzzle-piece'" 
+              :selected="true"
+            >
+              <SimpleAccordion>
+                <CollapsibleItem :selected = 'true'>
+                  <template #heading><span>Theme</span></template>
+                  <template #body>theme body</template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>GRID</span> <small>Bootstrap 4</small></template>
+                  <template #body>
+                    <div class="element">
+                      Container
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <div class="element">
+                      Row
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <div class="element">
+                      Column
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <div class="element">
+                      Row Break
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                  </template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>BUTTONS</span> <small>Bootstrap 4</small></template>
+                  <template #body>buttons body</template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>TEXT&IMAGES</span> <small>Bootstrap 4</small></template>
+                  <template #body>txt body</template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>UI Elements</span> <small>Bootstrap 4</small></template>
+                  <template #body>ddd</template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>LIST</span> <small>Bootstrap 4</small></template>
+                  <template #body>ddd</template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>TABLES</span> <small>Bootstrap 4</small></template>
+                  <template #body>ddd</template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>CODE</span> <small>Bootstrap 4</small></template>
+                  <template #body>ddd</template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>FORMS</span> <small>Bootstrap 4</small></template>
+                  <template #body>ddd</template>
+                </CollapsibleItem>
+              </SimpleAccordion>
             </tab>
             <tab :name="$t('widgets.files')"
                  :icon="'fas fa-copy'">
@@ -171,6 +227,8 @@ import RightArea from './components/RightArea.vue'
 import WidgetTabs from './components/tabs/WidgetTabs.vue'
 import Tab from './components/tabs/Tab.vue'
 import PageTabs from './components/tabs/PageTabs.vue'
+import SimpleAccordion from './components/accordion/SimpleAccordion.vue'
+import CollapsibleItem from './components/accordion/CollapsibleItem.vue'
 
 export default {
   name: 'app',
@@ -182,6 +240,8 @@ export default {
     WidgetTabs,
     Tab,
     PageTabs,
+    SimpleAccordion,
+    CollapsibleItem,
   },
   data () {
     return {
