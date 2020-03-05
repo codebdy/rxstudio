@@ -13,11 +13,11 @@ export default {
     }
   },
 
-  created () {
+  mounted () {
     document.addEventListener('mouseup', this.mouseUp)
   },
 
-  destroyed() {
+  beforeDestroyed() {
     document.removeEventListener('mouseup', this.mouseUp)
   },
 

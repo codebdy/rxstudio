@@ -6,5 +6,10 @@
     "download" : "下载",
     "about" : "关于",
     "github" : "Github"
+  },
+
+  "widgets":{
+    "studio" : "组件",
+    "files" : "文件"
   }
 }

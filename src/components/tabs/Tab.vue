@@ -1,5 +1,5 @@
 <template>
-  <div v-show="isActive">
+  <div v-show="isShow">
     <slot></slot>
   </div>
 </template>
@@ -13,12 +13,12 @@ export default {
   },
   data() {
     return {
-      isActive: false
+      isShow: false
     };
   },
     
   mounted() {
-    this.isActive = this.selected;
+    this.isShow = this.selected;
   }
 }
 </script>

@@ -170,8 +170,10 @@ a:hover{
 
 .vular-studio .x-handle{
   width: 3px;
+  flex-shrink: 1;
   cursor: w-resize;
   z-index: 10;
+  background: #fff;
 }
 
 .vular-studio .y-handle{
@@ -307,67 +309,6 @@ a:hover{
   width: 100%;
 }
 
-
-.vular-studio .widget-tabs{
-  flex:1;
-  display: flex;
-  flex-flow: column;
-}
-
-.vular-studio .widget-tabs .heads{
-  display: flex;
-  flex-flow: row;
-  justify-content:flex-start;
-  font-size: 12px;
-  height: 30px;
-  align-items: flex-end;
-  list-style: none;
-  padding:0;
-  margin:0;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.vular-studio .widget-tabs .heads .item{
-  padding: 0 10px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  cursor: default;
-  border-radius: 3px 3px 0 0;
-  border-top:solid #222 1px;
-}
-
-.vular-studio .widget-tabs .heads .item.active{
-  color: #fff;
-  background: #323332;
-  border-right:solid #222 1px;
-  border-left:solid #222 1px;
-  border-top:solid #222 1px;
-}
-
-.vular-studio .widget-tabs .tab-body{
-  width: 100%;
-  flex: 1;
-  background: #323332;
-  border-radius: 2px;
-  border-right:solid #222 1px;
-  border-bottom:solid #222 1px;
-  border-left:solid #222 1px;
-  display: flex;
-  flex-flow: column;
-}
-
-.vular-studio .widget-tabs .tab-body-inner{
-  flex: 1;
-  padding:5px;
-  display: flex;
-  flex-flow: column;
-  height: 0;
-}
 
 .vular-studio .left-area .left-inner{
   flex:1;

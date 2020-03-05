@@ -6,5 +6,11 @@
     "download" : "Download",
     "about" : "About",
     "github" : "Github"
+  },
+
+  "widgets":{
+    "studio" : "Studio",
+    "files" : "Files"
   }
+
 }

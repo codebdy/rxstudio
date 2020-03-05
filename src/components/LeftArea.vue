@@ -1,5 +1,5 @@
 <template>
-  <div class="left-area" :style="{width:width + 'px'}">
+  <div class="left-area" :class="sizeClass" :style="{width:width + 'px'}">
     <div class="left-inner">
       <div class="top-area">
         <slot name="top"></slot>
@@ -24,6 +24,7 @@ export default {
   data () {
     return {
       width:220,
+      sizeClass:"",
     }
   },
   created () {
@@ -37,6 +38,17 @@ export default {
       if(this.width > 600){
         this.width = 600
       }
+
+/*      if(this.width <= 120){
+        this.sizeClass = 'middle-size'
+      }
+      else if(this.width <= 90){
+        this.sizeClass = 'mini-size'
+      }
+      else{
+        this.sizeClass = ''
+      }*/
+
     },
   },
 }

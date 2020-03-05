@@ -5,14 +5,11 @@
       <LeftArea>
         <template #top>
           <WidgetTabs>
-            <tab name="Studio" :selected="true">
+            <tab :name="$t('widgets.studio')" :selected="true">
               <h1>Studio Content</h1>
             </tab>
-            <tab name="Files">
+            <tab :name="$t('widgets.files')">
               <h1>Files List</h1>
-            </tab>
-            <tab name="Others">
-              <h1>Other Content</h1>
             </tab>
           </WidgetTabs>
         </template>
