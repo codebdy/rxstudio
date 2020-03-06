@@ -117,24 +117,8 @@
             </tab>
             <tab :name="$t('widgets.files')"
                  :icon="'fas fa-copy'">
+              <FileTree v-model="files" :openIcon="'fas fa-folder-open'" :closeIcon="'fas fa-folder'" ></FileTree>
               <div class="file-tree">
-                <div class="folder">
-                  <div class="folder-title"><i class="fas fa-folder-open"></i>Pages</div>
-                  <div class="folder-files"> 
-                    <div class="file">
-                      <i class="far fa-file-code"></i> index.html
-                    </div>
-                    <div class="file">
-                      <i class="far fa-file-code"></i> about.html
-                    </div>
-                    <div class="file">
-                      <i class="far fa-file-code"></i> header.html
-                    </div>
-                    <div class="file">
-                      <i class="far fa-file-code"></i> untitled.html
-                    </div>
-                  </div>
-                </div>
                 , <i class="fas fa-folder"></i> Styles, <i class="far fa-file-code"></i>
 
                 Javascript, <i class="far fa-file-code"></i>
@@ -301,6 +285,7 @@ import PageTabs from './components/tabs/PageTabs.vue'
 import SimpleAccordion from './components/accordion/SimpleAccordion.vue'
 import CollapsibleItem from './components/accordion/CollapsibleItem.vue'
 import MouseOverPop from './components/MouseOverPop.vue'
+import FileTree from './components/tree/FileTree.vue'
 
 export default {
   name: 'app',
@@ -315,9 +300,26 @@ export default {
     SimpleAccordion,
     CollapsibleItem,
     MouseOverPop,
+    FileTree,
   },
   data () {
     return {
+      files:[
+        {
+          title:'test',
+          children:[
+            {
+              title:'子1'
+            },
+            {
+              title:'子2'
+            },
+            {
+              title:'子3'
+            },
+          ],
+        }
+      ]
     }
   }
 }
