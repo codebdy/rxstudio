@@ -6,8 +6,8 @@
       @click="click"  
       @contextmenu.prevent = 'onContextMenu'
     >
-      <div class="node-icon" @click="iconClick">
-        <i v-show="icon" :class="icon"></i>
+      <div v-show="icon" class="node-icon" @click="iconClick">
+        <i :class="icon"></i>
       </div>
       {{inputValue.title}}
     </div>
@@ -116,7 +116,7 @@ export default {
   }
 
   .tree-node .node-icon{
-    width: 18px;
+    width: 16px;
     height: 20px;
     display: flex;
     align-items: center;
