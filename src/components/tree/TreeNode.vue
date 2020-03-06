@@ -17,6 +17,7 @@
         :closeIcon = "closeIcon"
         :leafIcon = "leafIcon"
         :key="i" 
+        :folderCanbeSelected = "folderCanbeSelected"
         v-model="inputValue.children[i]"
         @nodeSelected = "nodeSelected"
       ></TreeNode>

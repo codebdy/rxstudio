@@ -6,7 +6,7 @@
       :openIcon = "openIcon"
       :closeIcon = "closeIcon"
       :leafIcon = "leafIcon"
-      :folderCanbeSelected = "false"
+      :folderCanbeSelected = "folderCanbeSelected"
       @nodeSelected = "nodeSelected"
       ></TreeNode>
   </div>
@@ -22,6 +22,7 @@ export default {
     openIcon:{ default: 'fas fa-folder-open'},
     closeIcon:{ default: 'fas fa-folder'},
     leafIcon:{ default: 'fas fa-file' },
+    folderCanbeSelected:{ default:false }
   },
   components:{
     TreeNode

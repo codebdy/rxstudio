@@ -123,10 +123,16 @@
         </template>
         <template #bottom>
           <WidgetTabs>
-            <tab :name="$t('widgets.treeview')"
-                 :icon="'fas fa-code-branch'" 
-                 :selected="true">
-              <NodeTree v-model="nodes" :openIcon="'fas fa-caret-down'" :closeIcon="'fas fa-caret-right'" :leafIcon="''"></NodeTree>
+            <tab 
+              :name="$t('widgets.treeview')"
+              :icon="'fas fa-code-branch'" 
+              :selected="true">
+              <NodeTree v-model="nodes" 
+                :openIcon="'fas fa-caret-down'" 
+                :closeIcon="'fas fa-caret-right'" 
+                :leafIcon="''"
+                :folderCanbeSelected = 'true'>
+              </NodeTree>
             </tab>
           </WidgetTabs>
         </template>
