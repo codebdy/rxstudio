@@ -72,7 +72,7 @@ export default {
   }
 
   .simple-accordion .item-heading:hover{
-    background: #383838;
+    background: rgba(255,255,255,0.05);
   }
 
   .simple-accordion .collapsible-item .item-heading span{
@@ -100,7 +100,7 @@ export default {
 
   .simple-accordion .item-body{
     border-top:#282828 solid 1px;
-    padding: 10px;
+    padding: 5px;
   }
 
   .simple-accordion .collapsible-item.item-collapse .item-heading::after{

@@ -117,7 +117,29 @@
             </tab>
             <tab :name="$t('widgets.files')"
                  :icon="'fas fa-copy'">
-              <h1>Files List</h1>
+              <div class="file-tree">
+                <div class="folder">
+                  <div class="folder-title"><i class="fas fa-folder-open"></i>Pages</div>
+                  <div class="folder-files"> 
+                    <div class="file">
+                      <i class="far fa-file-code"></i> index.html
+                    </div>
+                    <div class="file">
+                      <i class="far fa-file-code"></i> about.html
+                    </div>
+                    <div class="file">
+                      <i class="far fa-file-code"></i> header.html
+                    </div>
+                    <div class="file">
+                      <i class="far fa-file-code"></i> untitled.html
+                    </div>
+                  </div>
+                </div>
+                , <i class="fas fa-folder"></i> Styles, <i class="far fa-file-code"></i>
+
+                Javascript, <i class="far fa-file-code"></i>
+                 Images<i class="fas fa-image"></i>
+              </div>
             </tab>
           </WidgetTabs>
         </template>

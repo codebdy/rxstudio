@@ -74,7 +74,7 @@ a:hover{
 }
 
 .vular-studio .toolbar .button:hover{
-  background: #494d44;
+  background: rgba(255,255,255,0.05);
 }
 
 .vular-studio .toolbar .button i{
@@ -268,11 +268,11 @@ a:hover{
 }
 
 .vular-studio .page-toolbar .icon-button:hover{
-  background: #272727;
+  background: rgba(0,0,0,0.5);
 }
 
 .vular-studio .page-toolbar .icon-button.active{
-  background: #272727;
+  background: rgba(0,0,0,0.5);
 }
 
 .vular-studio .page-toolbar .icon-button.big i{
@@ -436,7 +436,7 @@ a:hover{
   cursor: default;
   color: #c2c2c2;
   font-size: 13px;
-  padding:5px 5px;
+  padding:5px 10px;
   margin:3px;
   display: flex;
   flex-flow: row;
@@ -445,8 +445,8 @@ a:hover{
 }
 
 .toolbox-element .element-title:hover{
-  color: #75b325;
-  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4); 
+  background: rgba(255,255,255,0.05)
+
 }
 
 .toolbox-element{
@@ -461,3 +461,44 @@ a:hover{
   background: #eee;
 }
 /*<=================*/
+
+.file-tree{
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  height: 0;
+  padding: 5px;
+}
+
+.file-tree i{
+  margin-right:5px;
+}
+
+.file-tree .folder .folder-title{
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left:5px;
+}
+
+.file-tree .folder .folder-title:hover{
+  background: rgba(255,255,255,0.05)
+}
+
+.file-tree .folder .folder-files{
+  display: flex;
+  flex-flow: column;
+  padding-left: 20px; 
+}
+
+.file-tree .file{
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px; 
+}
+
+.file-tree .file:hover{
+  background: rgba(255,255,255,0.05)
+}
