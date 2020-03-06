@@ -1,7 +1,10 @@
 <template>
-  <div class="tree-node">
+  <div class="tree-node" 
+    :class="inputValue.selected ? 'selected' :''"
+    @οncοntextmenu = "onContextMenu"
+  >
     <div class="node-title" @click="click">
-      <div class="node-icon">
+      <div class="node-icon" @click="iconClick">
         <i v-show="icon" :class="icon"></i>
       </div>
       {{inputValue.title}}
@@ -10,6 +13,7 @@
       <TreeNode v-for="(child, i) in inputValue.children" 
         :key="i" 
         v-model="inputValue.children[i]"
+        @nodeSelected = "nodeSelected"
       ></TreeNode>
     </div>
   </div>
@@ -22,11 +26,11 @@ export default {
     value: { default: {}},
     openIcon:{ default: 'fas fa-folder-open'},
     closeIcon:{ default: 'fas fa-folder'},
+    leafIcon:{ default: 'fas fa-file' },
+    folderCanbeSelected:{default: false},
   },
   data() {
     return {
-      isOpened : false,
-      isSelected : false,
     }
   },
 
@@ -41,34 +45,54 @@ export default {
     },
 
     icon(){
-      if(this.inputValue.children
-         &&this.inputValue.children.length > 0){
-        return this.isOpened ? this.openIcon :this.closeIcon
+      if(this.hasChildren){
+        return this.opened ? this.openIcon :this.closeIcon
       }
-      return 'far fa-file-code'
+      return this.inputValue.icon ? this.inputValue.icon : this.leafIcon
     },
 
     showChild(){
-      return (this.inputValue.children
-         &&this.inputValue.children.length > 0) && this.isOpened
-    }
+      return this.hasChildren && this.inputValue.opened
+    },
+
+    hasChildren(){
+      return this.inputValue.children
+         &&this.inputValue.children.length > 0
+    },
   },
 
   methods: {
     click(){
-      this.isOpened = !this.isOpened
+      if((this.hasChildren && this.folderCanbeSelected) || !this.hasChildren){
+        this.inputValue.selected = true
+        this.$emit('nodeSelected', this.inputValue)
+      }
+      else {
+        this.inputValue.opened = !this.inputValue.opened
+      }
+    },
+
+    iconClick(event){
+      if(this.hasChildren && this.folderCanbeSelected){
+        event.stopPropagation()
+        this.inputValue.opened = !this.inputValue.opened
+      }
+    },
+
+    nodeSelected(node){
+      this.$emit('nodeSelected', node)
+    },
+
+    onContextMenu(event){
+      console.log(event)
     }
   },
-    
-  mounted() {
-    this.node = this.value;
-  }
 }
 </script>
 
 <style>
-  .tree-node{
-
+  .tree-node.selected{
+    background: rgba(0,123,255, 0.1)
   }
 
   .children-nodes{
@@ -85,7 +109,7 @@ export default {
   }
 
   .tree-node .node-icon{
-    width: 20px;
+    width: 18px;
     height: 20px;
     display: flex;
     align-items: center;

@@ -307,15 +307,24 @@ export default {
       files:[
         {
           title:'test',
+          selected:false,
+          opened:false,
+          isFolder:true,
           children:[
             {
-              title:'子1'
+              title:'子1',
+              selected:false,
+              opened:false,
             },
             {
-              title:'子2'
+              title:'子2',
+              selected:false,
+              opened:false,
             },
             {
-              title:'子3'
+              title:'子3',
+              selected:false,
+              opened:false,
             },
           ],
         }
