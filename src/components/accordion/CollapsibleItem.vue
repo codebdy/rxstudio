@@ -23,7 +23,6 @@ export default {
 
   methods: {
     click() {
-      console.log('click')
       this.$emit('itemClick', this)
     }
   },

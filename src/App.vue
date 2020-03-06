@@ -14,42 +14,74 @@
                 <CollapsibleItem :selected = 'true'>
                   <template #heading><span>主题</span></template>
                   <template #body>
-                    <div class="element">
-                      导航
-                      <i class="fas fa-arrows-alt"></i>
-                    </div>
-                    <div class="element">
-                      关于我们
-                      <i class="fas fa-arrows-alt"></i>
-                    </div>
-                    <div class="element">
-                      优秀案例
-                      <i class="fas fa-arrows-alt"></i>
-                    </div>
-                    <div class="element">
-                      页脚
-                      <i class="fas fa-arrows-alt"></i>
-                    </div>
+                    <MouseOverPop class="toolbox-element">
+                      <template #heading>
+                        <div class="element-title">
+                          导航
+                        </div>
+                      </template>
+                      <template #body>
+                        <div class="pop-content">
+                          <img style="width: 100%;" src="images/navbar.jpg" />
+                        </div>
+                      </template>
+                    </MouseOverPop>
+                    <MouseOverPop class="toolbox-element">
+                      <template #heading>
+                        <div class="element-title">
+                          Header
+                        </div>
+                      </template>
+                      <template #body>
+                        <div class="pop-content">
+                          <img style="width: 100%;" src="images/header.jpg" />
+                        </div>
+                      </template>
+                    </MouseOverPop>
+                    <MouseOverPop class="toolbox-element">
+                      <template #heading>
+                        <div class="element-title">
+                          服务
+                        </div>
+                      </template>
+                      <template #body>
+                        <div class="pop-content">
+                          <img style="width: 100%;" src="images/services.jpg" />
+                        </div>
+                      </template>
+                    </MouseOverPop>
+                    <MouseOverPop class="toolbox-element">
+                      <template #heading>
+                        <div class="element-title">
+                          优秀案例
+                        </div>
+                      </template>
+                      <template #body>
+                        <div class="pop-content">
+                          <img style="width: 100%;" src="images/portfolio.jpg" />
+                        </div>
+                      </template>
+                    </MouseOverPop>
                   </template>
                 </CollapsibleItem>
                 <CollapsibleItem>
                   <template #heading><span>栅格</span> <small>Bootstrap 4</small></template>
                   <template #body>
-                    <div class="element">
+                    <div class="toolbox-element">
                       容器
-                      <i class="fas fa-arrows-alt"></i>
+                      
                     </div>
-                    <div class="element">
+                    <div class="toolbox-element">
                       Row
-                      <i class="fas fa-arrows-alt"></i>
+                      
                     </div>
-                    <div class="element">
+                    <div class="toolbox-element">
                       Column
-                      <i class="fas fa-arrows-alt"></i>
+                      
                     </div>
-                    <div class="element">
+                    <div class="toolbox-element">
                       Row Break
-                      <i class="fas fa-arrows-alt"></i>
+                      
                     </div>
                   </template>
                 </CollapsibleItem>
@@ -246,6 +278,7 @@ import Tab from './components/tabs/Tab.vue'
 import PageTabs from './components/tabs/PageTabs.vue'
 import SimpleAccordion from './components/accordion/SimpleAccordion.vue'
 import CollapsibleItem from './components/accordion/CollapsibleItem.vue'
+import MouseOverPop from './components/MouseOverPop.vue'
 
 export default {
   name: 'app',
@@ -259,6 +292,7 @@ export default {
     PageTabs,
     SimpleAccordion,
     CollapsibleItem,
+    MouseOverPop,
   },
   data () {
     return {

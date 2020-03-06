@@ -119,25 +119,4 @@ export default {
     display: none;
   }
 
-  .simple-accordion .item-body .element{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: move;
-    color: #c2c2c2;
-    font-size: 13px;
-    padding:5px 5px;
-    margin:3px;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .simple-accordion .item-body .element:hover{
-    color: #75b325;
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4); 
-  }
-
 </style>
