@@ -454,6 +454,7 @@ a:hover{
 
 .toolbox-element .pop-content{
   position: absolute;
+  top:70px;
   left:100%;
   width: 320px;
   padding:10px;
