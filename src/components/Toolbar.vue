@@ -1,8 +1,12 @@
 <template>
   <div class="toolbar">
     <div class="left">
-      <div class="button new"> 
+      <div class="button theme"> 
         <i class="fas fa-layer-group"></i> 
+        {{$t('toolbar.theme')}}
+      </div>
+      <div class="button new"> 
+        <i class="fas fa-file"></i> 
         {{$t('toolbar.new')}}
       </div>
       <div class="button open"> 

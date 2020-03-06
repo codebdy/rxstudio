@@ -1,5 +1,6 @@
 {
   "toolbar": {
+    "theme" : "主题",
     "new" : "新建",
     "open" : "打开",
     "save" : "保存",
@@ -16,6 +17,10 @@
     "code" : "代码",
     "anmation" : "动画",
     "style" : "样式",
-    "overview" : "概览"
+    "overview" : "概览",
+    "pages" : "页面",
+    "styles" : "样式",
+    "javascript" : "脚本",
+    "images" : "图片"
   }
 }

@@ -1,9 +1,11 @@
 <template>
-  <div class="tree-node" 
-    :class="inputValue.selected ? 'selected' :''"
-    @οncοntextmenu = "onContextMenu"
+  <div class="tree-node" :class="inputValue.selected ? 'selected' :''"
+
   >
-    <div class="node-title" @click="click">
+    <div class="node-title" 
+      @click="click"  
+      @contextmenu.prevent = 'onContextMenu'
+    >
       <div class="node-icon" @click="iconClick">
         <i v-show="icon" :class="icon"></i>
       </div>
@@ -46,7 +48,7 @@ export default {
 
     icon(){
       if(this.hasChildren){
-        return this.opened ? this.openIcon :this.closeIcon
+        return this.inputValue.opened ? this.openIcon : this.closeIcon
       }
       return this.inputValue.icon ? this.inputValue.icon : this.leafIcon
     },
@@ -87,6 +89,16 @@ export default {
       console.log(event)
     }
   },
+
+/*  mounted () {
+    console.log('mounted')
+    document.addEventListener('cοntextmenu', this.onContextMenu)
+  },
+
+  beforeDestroyed() {
+    document.removeEventListener('cοntextmenu', this.onContextMenu)
+  },*/
+
 }
 </script>
 

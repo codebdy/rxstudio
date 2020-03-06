@@ -83,6 +83,10 @@ a:hover{
 }
 
 .vular-studio .toolbar .button.new i{
+  color:#a8c9da;
+}
+
+.vular-studio .toolbar .button.theme i{
   color:#9da98d;
 }
 
@@ -462,43 +466,3 @@ a:hover{
 }
 /*<=================*/
 
-.file-tree{
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-  overflow-y: auto;
-  height: 0;
-  padding: 5px;
-}
-
-.file-tree i{
-  margin-right:5px;
-}
-
-.file-tree .folder .folder-title{
-  height: 30px;
-  display: flex;
-  align-items: center;
-  padding-left:5px;
-}
-
-.file-tree .folder .folder-title:hover{
-  background: rgba(255,255,255,0.05)
-}
-
-.file-tree .folder .folder-files{
-  display: flex;
-  flex-flow: column;
-  padding-left: 20px; 
-}
-
-.file-tree .file{
-  height: 30px;
-  display: flex;
-  align-items: center;
-  padding-left: 5px; 
-}
-
-.file-tree .file:hover{
-  background: rgba(255,255,255,0.05)
-}

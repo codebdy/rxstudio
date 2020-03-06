@@ -117,13 +117,7 @@
             </tab>
             <tab :name="$t('widgets.files')"
                  :icon="'fas fa-copy'">
-              <FileTree v-model="files" :openIcon="'fas fa-folder-open'" :closeIcon="'fas fa-folder'" ></FileTree>
-              <div class="file-tree">
-                , <i class="fas fa-folder"></i> Styles, <i class="far fa-file-code"></i>
-
-                Javascript, <i class="far fa-file-code"></i>
-                 Images<i class="fas fa-image"></i>
-              </div>
+              <NodeTree v-model="files" :openIcon="'fas fa-folder-open'" :closeIcon="'fas fa-folder'" ></NodeTree>
             </tab>
           </WidgetTabs>
         </template>
@@ -285,7 +279,7 @@ import PageTabs from './components/tabs/PageTabs.vue'
 import SimpleAccordion from './components/accordion/SimpleAccordion.vue'
 import CollapsibleItem from './components/accordion/CollapsibleItem.vue'
 import MouseOverPop from './components/MouseOverPop.vue'
-import FileTree from './components/tree/FileTree.vue'
+import NodeTree from './components/tree/NodeTree.vue'
 
 export default {
   name: 'app',
@@ -300,31 +294,94 @@ export default {
     SimpleAccordion,
     CollapsibleItem,
     MouseOverPop,
-    FileTree,
+    NodeTree,
   },
   data () {
     return {
       files:[
         {
-          title:'test',
+          title:this.$t('widgets.pages'),
           selected:false,
           opened:false,
           isFolder:true,
           children:[
             {
-              title:'子1',
+              title:'index.html',
               selected:false,
               opened:false,
+              icon:"far fa-file-code",
             },
             {
-              title:'子2',
+              title:'about.html',
               selected:false,
               opened:false,
+              icon:"far fa-file-code",
             },
             {
-              title:'子3',
+              title:'product.html',
               selected:false,
               opened:false,
+              icon:"far fa-file-code",
+            },
+          ],
+        },
+        {
+          title:this.$t('widgets.styles'),
+          selected:false,
+          opened:false,
+          isFolder:true,
+          children:[
+            {
+              title:'style.css',
+              selected:false,
+              opened:false,
+              icon:"far fa-file-code",
+            },
+            {
+              title:'custom.css',
+              selected:false,
+              opened:false,
+              icon:"far fa-file-code",
+            },
+          ],
+        },
+        {
+          title:this.$t('widgets.javascript'),
+          selected:false,
+          opened:false,
+          isFolder:true,
+          children:[
+            {
+              title:'jquery.js',
+              selected:false,
+              opened:false,
+              icon:"far fa-file-code",
+            },
+            {
+              title:'custom.js',
+              selected:false,
+              opened:false,
+              icon:"far fa-file-code",
+            },
+          ],
+        },
+        {
+          title:this.$t('widgets.images'),
+          selected:false,
+          opened:false,
+          isFolder:true,
+          children:[
+            {
+              title:'logo.png',
+              selected:false,
+              opened:false,
+              icon:"fas fa-image",
+            },
+            {
+              title:'about.jpg',
+              selected:false,
+              opened:false,
+              icon:"fas fa-image",
             },
           ],
         }

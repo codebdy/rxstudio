@@ -1,5 +1,5 @@
 <template>
-  <div class="file-tree">
+  <div class="node-tree">
     <TreeNode v-for = "(node, i) in inputValue" 
       :key = "i" 
       v-model = "inputValue[i]"
@@ -61,3 +61,15 @@ export default {
   },
 }
 </script>
+
+<style>
+  .node-tree{
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    overflow-y: auto;
+    height: 0;
+    padding: 5px;
+  }
+
+</style>

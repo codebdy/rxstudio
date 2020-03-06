@@ -1,5 +1,6 @@
 {
   "toolbar": {
+    "theme" : "Theme",
     "new" : "New",
     "open" : "Open",
     "save" : "Save",
@@ -16,7 +17,11 @@
     "code" : "Code",
     "anmation" : "Anmation",
     "style" : "Style",
-    "overview" : "Overview"
+    "overview" : "Overview",
+    "pages" : "Pages",
+    "styles" : "Styles",
+    "javascript" : "JavaScript",
+    "images" : "Images"
   }
 
 }
