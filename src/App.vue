@@ -126,7 +126,7 @@
             <tab :name="$t('widgets.treeview')"
                  :icon="'fas fa-code-branch'" 
                  :selected="true">
-              <h1>List view</h1>
+              <NodeTree v-model="nodes" :openIcon="'fas fa-caret-down'" :closeIcon="'fas fa-caret-right'" :leafIcon="''"></NodeTree>
             </tab>
           </WidgetTabs>
         </template>
@@ -358,7 +358,7 @@ export default {
               icon:"far fa-file-code",
             },
             {
-              title:'custom.js',
+              title:'customweweweeewewwwwew.js',
               selected:false,
               opened:false,
               icon:"far fa-file-code",
@@ -385,7 +385,74 @@ export default {
             },
           ],
         }
+      ],
+
+      nodes:[
+        {
+          title:'html',
+          selected:false,
+          opened:false,
+          children:[
+            {
+              title:'body',
+              selected:false,
+              opened:false,
+              icon:"far fa-file-code",
+              children:[
+                {
+                  title:'container',
+                  selected:false,
+                  opened:false,
+                },
+                {
+                  title:'div',
+                  selected:false,
+                  opened:false,
+                  children:[
+                    {
+                      title:'div',
+                      selected:false,
+                      opened:false,
+                    },
+                    {
+                      title:'section',
+                      selected:false,
+                      opened:false,
+                      children:[
+                        {
+                          title:'div',
+                          selected:false,
+                          opened:false,
+                        },
+                        {
+                          title:'div',
+                          selected:false,
+                          opened:false,
+                          children:[
+                            {
+                              title:'footer',
+                              selected:false,
+                              opened:false,
+                            }
+                          ]
+
+                        },
+                      ]
+
+                    },
+                    {
+                      title:'span',
+                      selected:false,
+                      opened:false,
+                    },
+                  ]
+                },
+              ]
+            },
+          ],
+        },
       ]
+
     }
   }
 }

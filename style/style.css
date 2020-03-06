@@ -325,15 +325,23 @@ a:hover{
   border-bottom:solid #222 1px;
   display: flex;
   flex-flow: column;
-  width: 100%;
 }
 
 .vular-studio .left-inner .left-top{
   flex: 1;
 }
 
-.vular-studio .left-inner .left-bottom{
-  height: 280px;
+.vular-studio .left-inner .bottom-area{
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+}
+
+.vular-studio .bottom-area .bottom-inner{
+  flex: 1;
+  height: 0;
+  display: flex;
+  flex-flow: column;
 }
 
 .vular-studio .right-area .right-inner{

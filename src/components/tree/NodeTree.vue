@@ -5,6 +5,7 @@
       v-model = "inputValue[i]"
       :openIcon = "openIcon"
       :closeIcon = "closeIcon"
+      :leafIcon = "leafIcon"
       :folderCanbeSelected = "false"
       @nodeSelected = "nodeSelected"
       ></TreeNode>
@@ -65,11 +66,11 @@ export default {
 <style>
   .node-tree{
     flex: 1;
+    width: 100%;
+    overflow: auto;
+    height: 0;
     display: flex;
     flex-flow: column;
-    overflow-y: auto;
-    height: 0;
-    padding: 5px;
   }
 
 </style>

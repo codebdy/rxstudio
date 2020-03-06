@@ -13,6 +13,9 @@
     </div>
     <div v-show="showChild" class="children-nodes">
       <TreeNode v-for="(child, i) in inputValue.children" 
+        :openIcon = "openIcon"
+        :closeIcon = "closeIcon"
+        :leafIcon = "leafIcon"
         :key="i" 
         v-model="inputValue.children[i]"
         @nodeSelected = "nodeSelected"
@@ -50,7 +53,7 @@ export default {
       if(this.hasChildren){
         return this.inputValue.opened ? this.openIcon : this.closeIcon
       }
-      return this.inputValue.icon ? this.inputValue.icon : this.leafIcon
+      return this.inputValue.icon !== undefined ? this.inputValue.icon : this.leafIcon
     },
 
     showChild(){
@@ -90,15 +93,6 @@ export default {
     }
   },
 
-/*  mounted () {
-    console.log('mounted')
-    document.addEventListener('cοntextmenu', this.onContextMenu)
-  },
-
-  beforeDestroyed() {
-    document.removeEventListener('cοntextmenu', this.onContextMenu)
-  },*/
-
 }
 </script>
 
@@ -118,6 +112,7 @@ export default {
     flex-wrap: nowrap;
     align-items: center;
     padding-left: 10px;
+    flex-shrink: 0;
   }
 
   .tree-node .node-icon{
@@ -125,6 +120,7 @@ export default {
     height: 20px;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
 
   .tree-node .node-title:hover{
