@@ -12,14 +12,31 @@
             >
               <SimpleAccordion>
                 <CollapsibleItem :selected = 'true'>
-                  <template #heading><span>Theme</span></template>
-                  <template #body>theme body</template>
-                </CollapsibleItem>
-                <CollapsibleItem>
-                  <template #heading><span>GRID</span> <small>Bootstrap 4</small></template>
+                  <template #heading><span>主题</span></template>
                   <template #body>
                     <div class="element">
-                      Container
+                      导航
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <div class="element">
+                      关于我们
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <div class="element">
+                      优秀案例
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <div class="element">
+                      页脚
+                      <i class="fas fa-arrows-alt"></i>
+                    </div>
+                  </template>
+                </CollapsibleItem>
+                <CollapsibleItem>
+                  <template #heading><span>栅格</span> <small>Bootstrap 4</small></template>
+                  <template #body>
+                    <div class="element">
+                      容器
                       <i class="fas fa-arrows-alt"></i>
                     </div>
                     <div class="element">
@@ -37,7 +54,7 @@
                   </template>
                 </CollapsibleItem>
                 <CollapsibleItem>
-                  <template #heading><span>BUTTONS</span> <small>Bootstrap 4</small></template>
+                  <template #heading><span>按钮</span> <small>Bootstrap 4</small></template>
                   <template #body>buttons body</template>
                 </CollapsibleItem>
                 <CollapsibleItem>
