@@ -6,13 +6,20 @@
       @click="click"  
       @contextmenu.prevent = 'onContextMenu'
       ref="nodTitle"
+      :class="inputValue.locked ? 'locked' : ''"
     >
       <div  class="node-icon" @click="iconClick">
         <i v-show="icon" :class="icon"></i>
       </div>
-      {{inputValue.title}}
+      <input v-if="inputValue.isEditing" 
+        v-model="inputValue.title" 
+        @blur="inputBlur" 
+        @keyup.13 = "inputBlur"
+        @click="inputClick"
+        autofocus="autofocus"/>
+      <template v-else>{{inputValue.title}}</template>
     </div>
-    <div v-show="showChild" class="children-nodes">
+    <div v-if="showChild" class="children-nodes">
       <TreeNode v-for="(child, i) in inputValue.children" 
         :openIcon = "openIcon"
         :closeIcon = "closeIcon"
@@ -24,8 +31,22 @@
         @nodeSelected = "nodeSelected"
       ></TreeNode>
     </div>
-    <div v-if='showContextMenu' class="node-context-menu">
-      
+    <div v-if='showContextMenu' 
+      class="node-context-menu"
+      :style="{'top':contextMenuTop, 'left':contextMenuLeft}"
+      >
+      <div v-if="inputValue.isFolder" class="menu-item" 
+        @click = "newChild">
+        <i class="fas fa-file"></i> {{$t('widgets.new')}}
+      </div>
+      <div v-if="!inputValue.isFolder" class="menu-item"
+        @click = "rename">
+        <i class="fas fa-pen"></i> {{$t('widgets.rename')}}
+      </div>
+      <div v-if="!inputValue.isFolder" class="menu-item"
+        @click = "remove">
+        <i class="fas fa-trash-alt"></i> {{$t('widgets.delete')}}
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +65,8 @@ export default {
   data() {
     return {
       contextMenuPoped: false,
+      contextMenuTop: '0',
+      contextMenuLeft: '0',
     }
   },
 
@@ -76,22 +99,25 @@ export default {
       return this.inputValue.children
          &&this.inputValue.children.length > 0
     },
+
   },
   mounted () {
-    document.addEventListener('click', this.hideCOntextMenuNoCondition)
+    document.addEventListener('click', this.clearEditingThings)
     document.addEventListener('contextmenu', this.hideContextMenu)
   },
 
   beforeDestroyed() {
-    document.removeEventListener('click', this.hideCOntextMenuNoCondition)
+    document.removeEventListener('click', this.clearEditingThings)
     document.removeEventListener('contextmenu', this.hideContextMenu)
   },
 
   methods: {
     click(){
       if((this.hasChildren && this.folderCanbeSelected) || !this.hasChildren){
-        this.inputValue.selected = true
-        this.$emit('nodeSelected', this.inputValue)
+        if(!this.inputValue.locked){
+          this.inputValue.selected = true
+          this.$emit('nodeSelected', this.inputValue)
+        }
       }
       else {
         this.inputValue.opened = !this.inputValue.opened
@@ -110,19 +136,50 @@ export default {
     },
 
     onContextMenu(event){
+      this.contextMenuTop = event.clientY + 'px'
+      this.contextMenuLeft = event.clientX + 'px'
       this.contextMenuPoped = true
-      //event.stopPropagation()
     },
 
     hideContextMenu(event){
-      console.log(event.target, this.$refs.nodTitle)
       if(event.target !== this.$refs.nodTitle){
         this.contextMenuPoped = false
       }
     },
 
-    hideCOntextMenuNoCondition(){
+    clearEditingThings(){
       this.contextMenuPoped = false
+      this.inputValue.isEditing = false
+    },
+
+    newChild(){
+      this.inputValue.opened = true
+      this.inputValue.children.push(
+        {
+          title:'new...',
+          selected:false,
+          opened:false,
+          isEditing:true,
+          icon: this.inputValue.leafIcon,
+        }
+      )
+    },
+
+    rename(event){
+      this.inputValue.isEditing = true
+      this.contextMenuPoped = false
+      event.stopPropagation()
+    },
+
+    remove(){
+
+    },
+
+    inputClick(event){
+      event.stopPropagation()
+    },
+    inputBlur(event){
+      this.inputValue.isEditing = false
     }
   },
 
@@ -148,6 +205,10 @@ export default {
     flex-shrink: 0;
   }
 
+  .tree-node .node-title.locked{
+    color: #999;
+  }
+
   .tree-node .node-icon{
     width: 20px;
     height: 20px;
@@ -164,8 +225,35 @@ export default {
   .node-context-menu{
     position: fixed;
     display: flex;
-    min-height: 200px;
-    min-width: 200px;
-    background: #eee;
+    flex-flow: column;
+    min-width: 80px;
+    background: #fff;
+    color: #000;
+    box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.5); 
+  }
+
+  .node-context-menu .menu-item{
+    flex: 1;
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .node-context-menu .menu-item i{
+    color:#75b325;
+    width: 20px;
+  }
+
+
+  .node-context-menu .menu-item:hover{
+    background: #ebebeb;
+  }
+
+  .node-title input{
+    border: 0;
+    outline: 0;
+    background: rgba(0,0,0,0.2);
+    padding:4px;
+    border:#555 solid 1px;
+    color: #fff;
   }
 </style>

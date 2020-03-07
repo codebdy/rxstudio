@@ -21,7 +21,10 @@
     "pages" : "Pages",
     "styles" : "Styles",
     "javascript" : "JavaScript",
-    "images" : "Images"
+    "images" : "Images",
+    "new" : "New",
+    "rename" : "Rename",
+    "delete" : "Delete"
   }
 
 }

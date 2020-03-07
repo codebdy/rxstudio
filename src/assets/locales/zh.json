@@ -21,6 +21,9 @@
     "pages" : "页面",
     "styles" : "样式",
     "javascript" : "脚本",
-    "images" : "图片"
+    "images" : "图片",
+    "new" : "新建",
+    "rename" : "重命名",
+    "delete" : "删除"
   }
 }

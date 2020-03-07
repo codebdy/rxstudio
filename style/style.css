@@ -332,7 +332,6 @@ a:hover{
 }
 
 .vular-studio .left-inner .bottom-area{
-  flex: 1;
   display: flex;
   flex-flow: column;
 }

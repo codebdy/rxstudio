@@ -313,25 +313,28 @@ export default {
           title:this.$t('widgets.pages'),
           selected:false,
           opened:false,
-          isFolder:true,
-          locked:true,//不能被选中，不能被编辑，可以新建子节点
+          isFolder:true,//不能被编辑，可以新建子节点
+          leafIcon:'far fa-file-code',//子节点图标，构建新节点时使用
           children:[
             {
               title:'index.html',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"far fa-file-code",
             },
             {
               title:'about.html',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"far fa-file-code",
             },
             {
               title:'product.html',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"far fa-file-code",
             },
           ],
@@ -341,17 +344,20 @@ export default {
           selected:false,
           opened:false,
           isFolder:true,
+          leafIcon:'far fa-file-code',//子节点图标，构建新节点时使用
           children:[
             {
               title:'style.css',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"far fa-file-code",
             },
             {
               title:'custom.css',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"far fa-file-code",
             },
           ],
@@ -361,11 +367,13 @@ export default {
           selected:false,
           opened:false,
           isFolder:true,
+          leafIcon:'far fa-file-code',//子节点图标，构建新节点时使用
           children:[
             {
               title:'jquery.js',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"far fa-file-code",
             },
             {
@@ -373,6 +381,7 @@ export default {
               selected:false,
               opened:false,
               icon:"far fa-file-code",
+              isEditing:false,
             },
           ],
         },
@@ -381,17 +390,20 @@ export default {
           selected:false,
           opened:false,
           isFolder:true,
+          leafIcon:'fas fa-image',//子节点图标，构建新节点时使用
           children:[
             {
               title:'logo.png',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"fas fa-image",
             },
             {
               title:'about.jpg',
               selected:false,
               opened:false,
+              isEditing:false,
               icon:"fas fa-image",
             },
           ],
@@ -403,11 +415,13 @@ export default {
           title:'html',
           selected:false,
           opened:false,
+          locked:true,//不能被选中
           children:[
             {
               title:'body',
               selected:false,
               opened:false,
+              locked:true,//不能被选中
               icon:"far fa-file-code",
               children:[
                 {
@@ -441,7 +455,7 @@ export default {
                           opened:false,
                           children:[
                             {
-                              title:'footer',
+                              title:'footerewweewewew',
                               selected:false,
                               opened:false,
                             }
