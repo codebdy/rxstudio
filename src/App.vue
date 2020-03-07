@@ -117,7 +117,11 @@
             </tab>
             <tab :name="$t('widgets.files')"
                  :icon="'fas fa-copy'">
-              <NodeTree v-model="files" :openIcon="'fas fa-folder-open'" :closeIcon="'fas fa-folder'" ></NodeTree>
+              <NodeTree v-model="files" 
+               :openIcon="'fas fa-folder-open'" 
+               :closeIcon="'fas fa-folder'"
+               :editable = 'true' >
+               </NodeTree>
             </tab>
           </WidgetTabs>
         </template>
@@ -310,6 +314,7 @@ export default {
           selected:false,
           opened:false,
           isFolder:true,
+          locked:true,//不能被选中，不能被编辑，可以新建子节点
           children:[
             {
               title:'index.html',

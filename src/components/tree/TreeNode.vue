@@ -5,6 +5,7 @@
     <div class="node-title" 
       @click="click"  
       @contextmenu.prevent = 'onContextMenu'
+      ref="nodTitle"
     >
       <div  class="node-icon" @click="iconClick">
         <i v-show="icon" :class="icon"></i>
@@ -18,9 +19,13 @@
         :leafIcon = "leafIcon"
         :key="i" 
         :folderCanbeSelected = "folderCanbeSelected"
+        :editable = "editable"
         v-model="inputValue.children[i]"
         @nodeSelected = "nodeSelected"
       ></TreeNode>
+    </div>
+    <div v-if='showContextMenu' class="node-context-menu">
+      
     </div>
   </div>
 </template>
@@ -33,10 +38,12 @@ export default {
     openIcon:{ default: 'fas fa-folder-open'},
     closeIcon:{ default: 'fas fa-folder'},
     leafIcon:{ default: 'fas fa-file' },
-    folderCanbeSelected:{default: false},
+    folderCanbeSelected:{ default: false },
+    editable: { default:false },
   },
   data() {
     return {
+      contextMenuPoped: false,
     }
   },
 
@@ -48,6 +55,10 @@ export default {
         set:function(val) {
           this.$emit('input', val);
         },
+    },
+
+    showContextMenu(){
+      return this.contextMenuPoped && this.editable
     },
 
     icon(){
@@ -65,6 +76,15 @@ export default {
       return this.inputValue.children
          &&this.inputValue.children.length > 0
     },
+  },
+  mounted () {
+    document.addEventListener('click', this.hideCOntextMenuNoCondition)
+    document.addEventListener('contextmenu', this.hideContextMenu)
+  },
+
+  beforeDestroyed() {
+    document.removeEventListener('click', this.hideCOntextMenuNoCondition)
+    document.removeEventListener('contextmenu', this.hideContextMenu)
   },
 
   methods: {
@@ -90,7 +110,19 @@ export default {
     },
 
     onContextMenu(event){
-      console.log(event)
+      this.contextMenuPoped = true
+      //event.stopPropagation()
+    },
+
+    hideContextMenu(event){
+      console.log(event.target, this.$refs.nodTitle)
+      if(event.target !== this.$refs.nodTitle){
+        this.contextMenuPoped = false
+      }
+    },
+
+    hideCOntextMenuNoCondition(){
+      this.contextMenuPoped = false
     }
   },
 
@@ -127,5 +159,13 @@ export default {
 
   .tree-node .node-title:hover{
     background: rgba(255,255,255, 0.05);
+  }
+
+  .node-context-menu{
+    position: fixed;
+    display: flex;
+    min-height: 200px;
+    min-width: 200px;
+    background: #eee;
   }
 </style>
