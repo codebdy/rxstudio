@@ -6,8 +6,8 @@
       @click="click"  
       @contextmenu.prevent = 'onContextMenu'
     >
-      <div v-show="icon" class="node-icon" @click="iconClick">
-        <i :class="icon"></i>
+      <div  class="node-icon" @click="iconClick">
+        <i v-show="icon" :class="icon"></i>
       </div>
       {{inputValue.title}}
     </div>
@@ -103,7 +103,7 @@ export default {
   }
 
   .children-nodes{
-    padding-left:20px;
+    padding-left:15px;
   }
 
   .tree-node .node-title{
@@ -112,16 +112,17 @@ export default {
     flex-flow: row;
     flex-wrap: nowrap;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 0px;
     flex-shrink: 0;
   }
 
   .tree-node .node-icon{
-    width: 16px;
+    width: 20px;
     height: 20px;
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    justify-content: center;
   }
 
   .tree-node .node-title:hover{
