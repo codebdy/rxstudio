@@ -248,7 +248,9 @@
             <tab :name="$t('widgets.options')"
                  :icon="'fas fa-paint-brush'" 
                  :selected="true">
-              <h1>options Content</h1>
+              <RxInput>
+                <Switch></Switch>
+              </RxInput>
             </tab>
             <tab :name="$t('widgets.code')"
                  :icon="'fas fa-code'">
@@ -290,6 +292,11 @@ import SimpleAccordion from './components/accordion/SimpleAccordion.vue'
 import CollapsibleItem from './components/accordion/CollapsibleItem.vue'
 import MouseOverPop from './components/MouseOverPop.vue'
 import NodeTree from './components/tree/NodeTree.vue'
+import RxInput from './components/inputs/RxInput.vue'
+import Switch from './components/inputs/Switch.vue'
+
+import files from './mock/files.js'
+import nodes from './mock/nodes.js'
 
 export default {
   name: 'app',
@@ -305,178 +312,13 @@ export default {
     CollapsibleItem,
     MouseOverPop,
     NodeTree,
+    RxInput,
+    Switch,
   },
   data () {
     return {
-      files:[
-        {
-          title:this.$t('widgets.pages'),
-          selected:false,
-          opened:false,
-          isFolder:true,//不能被编辑，可以新建子节点
-          leafIcon:'far fa-file-code',//子节点图标，构建新节点时使用
-          children:[
-            {
-              title:'index.html',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"far fa-file-code",
-            },
-            {
-              title:'about.html',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"far fa-file-code",
-            },
-            {
-              title:'product.html',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"far fa-file-code",
-            },
-          ],
-        },
-        {
-          title:this.$t('widgets.styles'),
-          selected:false,
-          opened:false,
-          isFolder:true,
-          leafIcon:'far fa-file-code',//子节点图标，构建新节点时使用
-          children:[
-            {
-              title:'style.css',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"far fa-file-code",
-            },
-            {
-              title:'custom.css',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"far fa-file-code",
-            },
-          ],
-        },
-        {
-          title:this.$t('widgets.javascript'),
-          selected:false,
-          opened:false,
-          isFolder:true,
-          leafIcon:'far fa-file-code',//子节点图标，构建新节点时使用
-          children:[
-            {
-              title:'jquery.js',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"far fa-file-code",
-            },
-            {
-              title:'customweweweeewewwwwew.js',
-              selected:false,
-              opened:false,
-              icon:"far fa-file-code",
-              isEditing:false,
-            },
-          ],
-        },
-        {
-          title:this.$t('widgets.images'),
-          selected:false,
-          opened:false,
-          isFolder:true,
-          leafIcon:'fas fa-image',//子节点图标，构建新节点时使用
-          children:[
-            {
-              title:'logo.png',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"fas fa-image",
-            },
-            {
-              title:'about.jpg',
-              selected:false,
-              opened:false,
-              isEditing:false,
-              icon:"fas fa-image",
-            },
-          ],
-        }
-      ],
-
-      nodes:[
-        {
-          title:'html',
-          selected:false,
-          opened:false,
-          locked:true,//不能被选中
-          children:[
-            {
-              title:'body',
-              selected:false,
-              opened:false,
-              locked:true,//不能被选中
-              icon:"far fa-file-code",
-              children:[
-                {
-                  title:'container',
-                  selected:false,
-                  opened:false,
-                },
-                {
-                  title:'div',
-                  selected:false,
-                  opened:false,
-                  children:[
-                    {
-                      title:'div',
-                      selected:false,
-                      opened:false,
-                    },
-                    {
-                      title:'section',
-                      selected:false,
-                      opened:false,
-                      children:[
-                        {
-                          title:'div',
-                          selected:false,
-                          opened:false,
-                        },
-                        {
-                          title:'div',
-                          selected:false,
-                          opened:false,
-                          children:[
-                            {
-                              title:'footerewweewewew',
-                              selected:false,
-                              opened:false,
-                            }
-                          ]
-
-                        },
-                      ]
-
-                    },
-                    {
-                      title:'span',
-                      selected:false,
-                      opened:false,
-                    },
-                  ]
-                },
-              ]
-            },
-          ],
-        },
-      ]
+      files:files,
+      nodes:nodes,
 
     }
   }
