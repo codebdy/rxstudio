@@ -47,7 +47,7 @@ export default {
     height: 0;
     display: flex;
     flex-flow: column;
-    margin-top: 2px;
+    /*margin-top: 2px;*/
   }
   .simple-accordion .collapsible-item{
     display: flex;
@@ -66,7 +66,7 @@ export default {
     padding-bottom:10px;
     padding-right:20px;
     position: relative;
-    border-top:#484848 solid 1px;
+    /*border-top:#484848 solid 1px;*/
     border-bottom:#282828 solid 1px;
     cursor: default;
   }

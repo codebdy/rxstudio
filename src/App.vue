@@ -248,9 +248,22 @@
             <tab :name="$t('widgets.options')"
                  :icon="'fas fa-paint-brush'" 
                  :selected="true">
-              <RxInput>
-                <Switch></Switch>
-              </RxInput>
+              <SimpleAccordion>
+                <CollapsibleItem v-for="(option, i) in options" :key="i">
+                  <template #heading>{{option.label}}</template>
+                  <template #body>
+                    <RxInputRow
+                      v-for = "(input, j) in option.inputs"
+                      :key = "j"
+                      :label = "input.label"
+                      :defaultValue = "input.defaultValue"
+                      :inputSchema = "input.schema"
+                      v-model = "input.value"
+                    >
+                    </RxInputRow>
+                  </template>
+                </CollapsibleItem>
+              </SimpleAccordion>
             </tab>
             <tab :name="$t('widgets.code')"
                  :icon="'fas fa-code'">
@@ -292,11 +305,11 @@ import SimpleAccordion from './components/accordion/SimpleAccordion.vue'
 import CollapsibleItem from './components/accordion/CollapsibleItem.vue'
 import MouseOverPop from './components/MouseOverPop.vue'
 import NodeTree from './components/tree/NodeTree.vue'
-import RxInput from './components/inputs/RxInput.vue'
-import Switch from './components/inputs/Switch.vue'
+import RxInputRow from './components/inputs/RxInputRow.vue'
 
 import files from './mock/files.js'
 import nodes from './mock/nodes.js'
+import options from './mock/options.js'
 
 export default {
   name: 'app',
@@ -312,14 +325,13 @@ export default {
     CollapsibleItem,
     MouseOverPop,
     NodeTree,
-    RxInput,
-    Switch,
+    RxInputRow,
   },
   data () {
     return {
       files:files,
       nodes:nodes,
-
+      options:options,
     }
   }
 }
