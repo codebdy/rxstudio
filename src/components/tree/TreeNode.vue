@@ -29,6 +29,7 @@
         :editable = "editable"
         v-model="inputValue.children[i]"
         @nodeSelected = "nodeSelected"
+        @removeSelf = "removeChild"
       ></TreeNode>
     </div>
     <div v-if='showContextMenu' 
@@ -85,7 +86,7 @@ export default {
     },
 
     icon(){
-      if(this.hasChildren){
+      if(this.hasChildren || this.inputValue.isFolder){
         return this.inputValue.opened ? this.openIcon : this.closeIcon
       }
       return this.inputValue.icon !== undefined ? this.inputValue.icon : this.leafIcon
@@ -113,7 +114,7 @@ export default {
 
   methods: {
     click(){
-      if((this.hasChildren && this.folderCanbeSelected) || !this.hasChildren){
+      if((this.hasChildren && this.folderCanbeSelected) || !this.hasChildren && !this.inputValue.isFolder){
         if(!this.inputValue.locked){
           this.inputValue.selected = true
           this.$emit('nodeSelected', this.inputValue)
@@ -152,7 +153,7 @@ export default {
       this.inputValue.isEditing = false
     },
 
-    newChild(){
+    newChild(event){
       this.inputValue.opened = true
       this.inputValue.children.push(
         {
@@ -163,6 +164,8 @@ export default {
           icon: this.inputValue.leafIcon,
         }
       )
+      this.contextMenuPoped = false
+      event.stopPropagation()
     },
 
     rename(event){
@@ -172,15 +175,26 @@ export default {
     },
 
     remove(){
-
+      this.$emit('removeSelf',this.inputValue)
     },
 
     inputClick(event){
       event.stopPropagation()
     },
+
     inputBlur(event){
       this.inputValue.isEditing = false
-    }
+    },
+
+    removeChild(child){
+      for(var i in this.inputValue.children){
+        if(this.inputValue.children[i] === child){
+          this.inputValue.children.splice(i,1)
+          return
+        }
+      }
+    },
+
   },
 
 }
