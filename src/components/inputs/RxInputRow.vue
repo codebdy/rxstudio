@@ -2,8 +2,8 @@
   <div class="rx-input-row" :class = "changed ? 'changed' :''">
     <div class="label">{{label}}</div>
     <RxSwitch 
-      :onValue = "'on-value'"
-      :offValue = "'off-value'"
+      v-if="inputName == 'RxSwitch'"
+      v-bind = "inputProps"
       v-model = "inputValue"
     ></RxSwitch>
   </div>
