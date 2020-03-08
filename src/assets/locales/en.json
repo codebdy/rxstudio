@@ -24,7 +24,8 @@
     "images" : "Images",
     "new" : "New",
     "rename" : "Rename",
-    "delete" : "Delete"
+    "delete" : "Delete",
+    "reset":"Reset"
   }
 
 }

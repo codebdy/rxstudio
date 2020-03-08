@@ -2,7 +2,7 @@
   <CollapsibleItem class="option-item" @itemClick = "itemClick">
     <template #heading>
       {{inputValue.label}} 
-      <div v-if="changed" class="reset-button" @click="resetAll">Reset all</div>
+      <div v-if="changed" class="reset-button" @click="resetAll">{{$t('widgets.reset')}}</div>
     </template>
     <template #body>
       <RxInputRow 

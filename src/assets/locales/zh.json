@@ -24,6 +24,7 @@
     "images" : "图片",
     "new" : "新建",
     "rename" : "重命名",
-    "delete" : "删除"
+    "delete" : "删除",
+    "reset":"重置"
   }
 }

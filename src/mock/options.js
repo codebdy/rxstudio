@@ -12,11 +12,43 @@ export default[
           offValue:'',
         },
       },
+      {
+        label:'测试',
+        value:'off',
+        defaultValue:'off',
+        inputName:'RxSwitch',
+        props:{
+          onValue:'on',
+          offValue:'off',
+        },
+      },
     ],
   },
 
   {
     label:'文本选项',
+    rows:[
+      {
+        label:'测试3',
+        value:'no-gutters',
+        defaultValue:'no-gutters',
+        inputName:'RxSwitch',
+        props:{
+          onValue:'no-gutters',
+          offValue:'',
+        },
+      },
+      {
+        label:'测试4',
+        value:'off',
+        defaultValue:'off',
+        inputName:'RxSwitch',
+        props:{
+          onValue:'on',
+          offValue:'off',
+        },
+      },
+    ],
   },
   {
     label:'Bootstrap工具',
