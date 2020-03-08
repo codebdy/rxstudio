@@ -25,6 +25,7 @@
     "new" : "新建",
     "rename" : "重命名",
     "delete" : "删除",
-    "reset":"重置"
+    "reset":"重置",
+    "select":"-- 选择 --"
   }
 }

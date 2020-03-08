@@ -3,6 +3,7 @@
     <div class="label">{{label}}</div>
     <component 
       :is = "inputName"
+      :defaultValue = "defaultValue"
       v-bind = "inputProps"
       v-model = "inputValue"
     ></component>
@@ -11,6 +12,7 @@
 
 <script>
 import RxSwitch from './RxSwitch.vue'
+import RxSelect from './RxSelect.vue'
 
 export default {
   name: 'RxInputRow',
@@ -23,6 +25,7 @@ export default {
   },
   components:{
     RxSwitch,
+    RxSelect,
   },
   data () {
     return {
@@ -52,6 +55,7 @@ export default {
     display: flex;
     flex-flow: row;
     align-items: center;
+    color: #f0f1ef;
   }
 
   .rx-input-row .label{

@@ -68,6 +68,9 @@ export default {
 </script>
 
 <style>
+.option-item{
+  font-size: 12px;
+}
 .option-item.collapsible-item .item-heading{
   display: flex;
   flex-flow: row;

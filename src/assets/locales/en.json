@@ -25,7 +25,8 @@
     "new" : "New",
     "rename" : "Rename",
     "delete" : "Delete",
-    "reset":"Reset"
+    "reset":"Reset",
+    "select":"-- Select --"
   }
 
 }
