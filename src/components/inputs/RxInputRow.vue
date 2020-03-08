@@ -56,8 +56,10 @@ export default {
   .rx-input-row{
     display: flex;
     flex-flow: row;
+    /*flex-wrap: wrap;*/
     align-items: center;
     color: #f0f1ef;
+    width:100%;
   }
 
   .rx-input-row .label{
@@ -68,6 +70,7 @@ export default {
     color:#c2c2c2;
     font-size: 12px;
     width: 100px;
+    flex-shrink: 1;
   }
   .rx-input-row.changed .label{
     color:#7c9161;

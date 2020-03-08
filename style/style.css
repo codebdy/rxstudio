@@ -347,6 +347,7 @@ a:hover{
   flex:1;
   display: flex;
   flex-flow: column;
+  width: 100%;
 }
 
 .vular-studio .right-inner .right-top{

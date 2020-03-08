@@ -365,7 +365,7 @@ export default {
   right:100%;
   top: -3px;
   z-index: 1000;
-  min-width: 220px;
+  min-width: 280px;
   min-height: 300px;
   border-radius: 0;
 }
