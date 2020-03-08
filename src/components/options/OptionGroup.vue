@@ -5,8 +5,27 @@
       <div v-if="changed" class="reset-button" @click="resetAll">{{$t('widgets.reset')}}</div>
     </template>
     <template #body>
-      <RxInputRow 
+      <RxInputRowGroup 
         v-for="(row, i) in inputValue.rows" 
+        v-if="row.isRowGroup"
+        :key="i" 
+        :label = "row.label"
+        :rows = "row.rows"
+      >
+        <RxInputRow 
+          v-for="(subRow, j) in row.rows" 
+          :key="j" 
+          :label = "subRow.label"
+          :inputName = "subRow.inputName"
+          :inputProps = "subRow.props"
+          :defaultValue = "subRow.defaultValue"
+          v-model = "subRow.value"
+        >
+        </RxInputRow>
+
+      </RxInputRowGroup>
+      <RxInputRow 
+        v-else="row.isRowGroup"
         :key="i" 
         :label = "row.label"
         :inputName = "row.inputName"
@@ -22,12 +41,14 @@
 <script>
 import CollapsibleItem from '../accordion/CollapsibleItem.vue'
 import RxInputRow from '../inputs/RxInputRow.vue'
+import RxInputRowGroup from '../inputs/RxInputRowGroup.vue'
 
 export default {
   name: 'OptionGroup',
   components:{
     CollapsibleItem,
-    RxInputRow
+    RxInputRow,
+    RxInputRowGroup
   },
   props:{
     value:{ default:{} }, 

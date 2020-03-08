@@ -27,6 +27,37 @@ export default[
           },
         },
       },
+      {//==>RxInputRowGroup
+        label:'边框',
+        isRowGroup:true,
+        rows:[//rows
+          {
+            label:'显示边框',
+            value:'no-gutters',
+            defaultValue:'no-gutters',
+            inputName:'RxSwitch',
+            props:{
+              onValue:'no-gutters',
+              offValue:'',
+            },
+          },
+          {
+            label:'边框颜色',
+            value:'white',
+            defaultValue:'black',
+            inputName:'RxSelect',
+            props:{
+              list:{
+                white:'白色',
+                black:'黑色',
+                red:'红色',
+                green:'绿色',
+                dntknow:'不知道什么色',
+              },
+            }
+          }
+        ]
+      },//<====
     ],
   },
 

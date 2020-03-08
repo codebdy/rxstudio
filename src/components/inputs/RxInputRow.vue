@@ -13,6 +13,7 @@
 <script>
 import RxSwitch from './RxSwitch.vue'
 import RxSelect from './RxSelect.vue'
+import RxInputRowGroup from './RxInputRowGroup'
 
 export default {
   name: 'RxInputRow',
@@ -26,6 +27,7 @@ export default {
   components:{
     RxSwitch,
     RxSelect,
+    RxInputRowGroup,
   },
   data () {
     return {
