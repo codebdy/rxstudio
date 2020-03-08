@@ -1,11 +1,11 @@
 <template>
   <div class="rx-input-row" :class = "changed ? 'changed' :''">
     <div class="label">{{label}}</div>
-    <RxSwitch 
-      v-if="inputName == 'RxSwitch'"
+    <component 
+      :is = "inputName"
       v-bind = "inputProps"
       v-model = "inputValue"
-    ></RxSwitch>
+    ></component>
   </div>
 </template>
 
