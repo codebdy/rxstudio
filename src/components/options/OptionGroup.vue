@@ -1,9 +1,12 @@
 <template>
-  <CollapsibleItem @itemClick = "itemClick">
-    <template #heading>{{inputValue.label}}</template>
+  <CollapsibleItem class="option-item" @itemClick = "itemClick">
+    <template #heading>
+      {{inputValue.label}} 
+      <div v-if="changed" class="reset-button" @click="resetAll">Reset all</div>
+    </template>
     <template #body>
       <RxInputRow 
-        v-for="(row, i) in inputValue.inputs" 
+        v-for="(row, i) in inputValue.rows" 
         :key="i" 
         :label = "row.label"
         :inputName = "row.inputName"
@@ -38,6 +41,16 @@ export default {
         this.$emit('input', val);
       },
     },
+
+    changed(){
+      for(var i in this.inputValue.rows){
+        let row = this.inputValue.rows[i]
+        if(row.value !== row.defaultValue){
+          return true
+        }
+      }
+      return false
+    }
   },
   mounted () {
     //console.log(this.value)
@@ -46,9 +59,26 @@ export default {
     itemClick(item){
       this.$emit('itemClick', item)
     },
+
+    resetAll(event){
+      for(var i in this.inputValue.rows){
+        this.inputValue.rows[i].value = this.inputValue.rows[i].defaultValue
+      }
+      event.stopPropagation()
+    }
   },
 }
 </script>
 
 <style>
+.option-item.collapsible-item .item-heading{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.reset-button{
+  margin-right:20px;
+  color: #bbb;
+}
 </style>

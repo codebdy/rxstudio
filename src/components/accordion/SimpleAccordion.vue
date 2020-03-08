@@ -91,7 +91,7 @@ export default {
     content: '';
     width: 0; 
     height: 0;
-    top: calc(50% -1px);
+    top: calc(50% - 2px);
     right: 19px;
     border-width: 4px;
     border-style: solid;
@@ -108,7 +108,7 @@ export default {
     content: '';
     width: 0; 
     height: 0;
-    top: calc(50% -1px);
+    top: calc(50% - 2px);
     right: 17px;
     border-width: 4px;
     border-style: solid;

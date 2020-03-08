@@ -1,15 +1,15 @@
 export default[
   {
     label:'Row选项',
-    inputs:[
+    rows:[
       {
         label:'Gutters',
         value:'no-gutters',
-        defaultValue:'',
+        defaultValue:'no-gutters',
         inputName:'RxSwitch',
         props:{
-          onValue:'',
-          offValue:'no-gutters',
+          onValue:'no-gutters',
+          offValue:'',
         },
       },
     ],

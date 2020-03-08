@@ -28,9 +28,12 @@ export default {
     return {
     }
   },
+  mounted () {
+    console.log(this.inputValue, this.defaultValue)
+  },
   computed:{
     changed(){
-      return this.inputValue === this.defaultValue
+      return this.inputValue !== this.defaultValue
     },
 
     inputValue: {
