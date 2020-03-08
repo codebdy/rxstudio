@@ -99,7 +99,7 @@ export default {
   }
 
   .simple-accordion .item-body{
-    border-top:#282828 solid 1px;
+    /*border-top:#282828 solid 1px;*/
     padding: 5px;
   }
 

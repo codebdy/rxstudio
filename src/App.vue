@@ -17,7 +17,7 @@
                     <MouseOverPop class="toolbox-element">
                       <template #heading>
                         <div class="element-title">
-                          导航
+                          <i class="fas fa-file"></i> 导航
                         </div>
                       </template>
                       <template #body>
@@ -29,7 +29,7 @@
                     <MouseOverPop class="toolbox-element">
                       <template #heading>
                         <div class="element-title">
-                          Header
+                          <i class="fas fa-file"></i> Header
                         </div>
                       </template>
                       <template #body>
@@ -41,7 +41,7 @@
                     <MouseOverPop class="toolbox-element">
                       <template #heading>
                         <div class="element-title">
-                          服务
+                          <i class="fas fa-file"></i> 服务
                         </div>
                       </template>
                       <template #body>
@@ -53,7 +53,7 @@
                     <MouseOverPop class="toolbox-element">
                       <template #heading>
                         <div class="element-title">
-                          优秀案例
+                          <i class="fas fa-file"></i> 优秀案例
                         </div>
                       </template>
                       <template #body>
@@ -129,7 +129,7 @@
           <WidgetTabs>
             <tab 
               :name="$t('widgets.treeview')"
-              :icon="'fas fa-code-branch'" 
+              :icon="'fas fa-project-diagram'" 
               :selected="true">
               <NodeTree v-model="nodes" 
                 :openIcon="'fas fa-caret-down'" 
@@ -257,7 +257,8 @@
                       :key = "j"
                       :label = "input.label"
                       :defaultValue = "input.defaultValue"
-                      :inputSchema = "input.schema"
+                      :inputName = "input.control"
+                      :inputProps = "input.props"
                       v-model = "input.value"
                     >
                     </RxInputRow>

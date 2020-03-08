@@ -2,8 +2,8 @@
   <div class="rx-input-row" :class = "changed ? 'changed' :''">
     <div class="label">{{label}}</div>
     <RxSwitch 
-      v-if="inputSchema.name == 'RxSwitch'"
-      :schema = "inputSchema"
+      :onValue = "'on-value'"
+      :offValue = "'off-value'"
       v-model = "inputValue"
     ></RxSwitch>
   </div>
@@ -18,7 +18,8 @@ export default {
     label:{ default:'' }, 
     defaultValue:{ default:'' }, 
     value:{ default:'' }, 
-    inputSchema:{ default:'' },
+    inputProps:{ default:'' },
+    inputName:{defalut:'input'},
   },
   components:{
     RxSwitch,

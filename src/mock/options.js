@@ -6,8 +6,8 @@ export default[
         label:'Gutters',
         value:'no-gutters',
         defaultValue:'',
-        schema:{
-          name:'RxSwitch',
+        control:'RxSwitch',
+        props:{
           onValue:'',
           offValue:'no-gutters',
         },

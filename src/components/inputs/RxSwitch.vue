@@ -1,6 +1,6 @@
 <template>
   <div class="rx-switch" 
-    :class="schema.onValue === inputValue? 'on' : ''"
+    :class="onValue === inputValue? 'on' : ''"
     @click="click">
   </div>
 </template>
@@ -10,7 +10,8 @@ export default {
   name: 'RxSwitch',
   props:{
     value:{ default:'' }, 
-    schema:{ default:'' },
+    onValue:{ default:'on' },
+    offValue:{ default:'off' },
   },
   computed:{
     inputValue: {
@@ -24,9 +25,9 @@ export default {
   },
   methods: {
     click(){
-      this.inputValue = this.inputValue === this.schema.onValue 
-                        ? this.schema.offValue 
-                        : this.schema.onValue
+      this.inputValue = this.inputValue === this.onValue 
+                        ? this.offValue 
+                        : this.onValue
     },
   },
 }
