@@ -248,23 +248,7 @@
             <tab :name="$t('widgets.options')"
                  :icon="'fas fa-paint-brush'" 
                  :selected="true">
-              <SimpleAccordion>
-                <CollapsibleItem v-for="(option, i) in options" :key="i">
-                  <template #heading>{{option.label}}</template>
-                  <template #body>
-                    <RxInputRow
-                      v-for = "(input, j) in option.inputs"
-                      :key = "j"
-                      :label = "input.label"
-                      :defaultValue = "input.defaultValue"
-                      :inputName = "input.control"
-                      :inputProps = "input.props"
-                      v-model = "input.value"
-                    >
-                    </RxInputRow>
-                  </template>
-                </CollapsibleItem>
-              </SimpleAccordion>
+                <OptionBox v-model="options"></OptionBox>
             </tab>
             <tab :name="$t('widgets.code')"
                  :icon="'fas fa-code'">
@@ -307,6 +291,7 @@ import CollapsibleItem from './components/accordion/CollapsibleItem.vue'
 import MouseOverPop from './components/MouseOverPop.vue'
 import NodeTree from './components/tree/NodeTree.vue'
 import RxInputRow from './components/inputs/RxInputRow.vue'
+import OptionBox from './components/options/OptionBox.vue'
 
 import files from './mock/files.js'
 import nodes from './mock/nodes.js'
@@ -327,6 +312,7 @@ export default {
     MouseOverPop,
     NodeTree,
     RxInputRow,
+    OptionBox,
   },
   data () {
     return {
@@ -339,4 +325,5 @@ export default {
 </script>
 
 <style>
+
 </style>

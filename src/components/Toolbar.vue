@@ -6,7 +6,7 @@
         {{$t('toolbar.theme')}}
       </div>
       <div class="button new"> 
-        <i class="fas fa-file"></i> 
+        <i class="fas fa-file-code"></i> 
         {{$t('toolbar.new')}}
       </div>
       <div class="button open"> 
