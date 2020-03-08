@@ -4,8 +4,26 @@
       <div class="label" 
         :class="collapsed? 'collapsed' :''"
         @click="click"
-      >{{label}}</div>
-      <div class="group-value"></div>
+      >
+      {{label}}
+      <div 
+        v-if="changed"
+        class="reset-button"
+        @click="resetAll"
+      >
+        {{$t('widgets.reset')}}
+      </div>
+      </div>
+      <div v-if="collapsed" class="group-value">
+        <div 
+          v-for="row in inputValue"
+          v-if="row.value"
+          class="value-label" 
+        >
+          {{row.value}}
+          <span class="remove-button" @click="remove(row.value)">×</span>
+        </div>
+      </div>
     </div>
     <div v-if="!collapsed" class="row-group-body">
       <slot></slot>
@@ -19,7 +37,7 @@ export default {
   name: 'RxInputRowGroup',
   props:{
     label:{ default:'' }, 
-    rows:{ default:[] }, 
+    value:{ default:[] }, 
   },
   data () {
     return {
@@ -28,8 +46,13 @@ export default {
   },
   computed:{
     changed(){
+      for(var i in this.inputValue){
+        let row = this.inputValue[i]
+        if(row.value !== row.defaultValue){
+          return true
+        }
+      }
       return false
-      //return this.inputValue !== this.defaultValue
     },
 
     inputValue: {
@@ -45,11 +68,30 @@ export default {
     click(){
       this.collapsed = !this.collapsed
     },
+
+    resetAll(event){
+      for(var i in this.inputValue){
+        this.inputValue[i].value = this.inputValue[i].defaultValue
+      }
+      event.stopPropagation()
+    },
+
+    remove(value){
+      for(var i in this.inputValue){
+        if(this.inputValue[i].value === value){
+          this.inputValue[i].value = ''
+        }
+      }
+    }
   },
 }
 </script>
 
 <style>
+.row-group .group-header .label{
+  justify-content: space-between;
+}
+
 .row-group-body .rx-input-row .label{
   justify-content: center;
 }
@@ -79,6 +121,29 @@ export default {
   border-width: 4px;
   border-style: solid;
   border-color:transparent transparent  transparent #c2c2c2;
+}
+
+.group-value{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.group-value .value-label{
+  display: flex;
+  flex-flow: row;
+  padding: 0 4px;
+  height: 24px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  margin: 1px;
+}
+
+.group-value .value-label .remove-button{
+  margin-left:2px;
+  cursor: pointer;
 }
 
 </style>

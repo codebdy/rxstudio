@@ -10,7 +10,7 @@
         v-if="row.isRowGroup"
         :key="i" 
         :label = "row.label"
-        :rows = "row.rows"
+        v-model = "row.rows"
       >
         <RxInputRow 
           v-for="(subRow, j) in row.rows" 
@@ -69,6 +69,14 @@ export default {
         if(row.value !== row.defaultValue){
           return true
         }
+
+        if(row.isRowGroup){
+          for(var j in row.rows){
+            if(row.rows[j].value !== row.rows[j].defaultValue){
+              return true
+            }
+          }
+        }
       }
       return false
     }
@@ -79,9 +87,16 @@ export default {
     },
 
     resetAll(event){
-      for(var i in this.inputValue.rows){
-        this.inputValue.rows[i].value = this.inputValue.rows[i].defaultValue
-      }
+      this.inputValue.rows.forEach(row=>{
+        if(row.isRowGroup){
+          row.rows.forEach(subRow =>{
+            subRow.value = subRow.defaultValue
+          })
+        }
+        else{
+          row.value = row.defaultValue
+        }
+      })
       event.stopPropagation()
     }
   },
@@ -101,5 +116,6 @@ export default {
 .reset-button{
   margin-right:20px;
   color: #bbb;
+  cursor: pointer;
 }
 </style>

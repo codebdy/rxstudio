@@ -42,17 +42,16 @@ export default[
             },
           },
           {
-            label:'边框颜色',
-            value:'white',
-            defaultValue:'black',
+            label:'位置',
+            value:'right',
+            defaultValue:'right',
             inputName:'RxSelect',
             props:{
               list:{
-                white:'白色',
-                black:'黑色',
-                red:'红色',
-                green:'绿色',
-                dntknow:'不知道什么色',
+                left:'左',
+                right:'右',
+                top:'上',
+                bottom:'下',
               },
             }
           }
