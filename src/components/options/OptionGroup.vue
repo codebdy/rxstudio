@@ -52,9 +52,6 @@ export default {
       return false
     }
   },
-  mounted () {
-    //console.log(this.value)
-  },
   methods: {
     itemClick(item){
       this.$emit('itemClick', item)
