@@ -13,7 +13,7 @@
       >×</span>
     </div>
     <div class="dialog-body about-content">
-      本程序是RXEdiror第二版的界面原型。<br/>
+      本程序是RXEditor第二版的界面原型。<br/>
       基于VUE实现，代码已转入RXeditor项目。<br />
       本原型不再维护，仅供学习参考。<br />
       RXEditor是一个开源的，可视化的，HTML编辑工具，基于Bootstrap实现。<br />
