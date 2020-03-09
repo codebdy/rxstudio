@@ -32,7 +32,10 @@
   "theme":{
     "theme-select":"Select A Theme",
     "cancel" : "Cancel",
-    "select" : "Select"
+    "select" : "Select",
+    "websites" : "Web sites",
+    "h5pages" : "H5 Single Pages",
+    "forms" : "Forms"
   }
 
 }

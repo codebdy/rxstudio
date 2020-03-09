@@ -30,8 +30,11 @@
     "enter-message":"按回车结束输入"
   },
   "theme":{
-    "theme-select":"选择模板",
+    "theme-select":"选择主题",
     "cancel" : "取消",
-    "select" : "选择"
+    "select" : "选择",
+    "websites" : "网站",
+    "h5pages" : "H5单页",
+    "forms" : "表单"
   }
 }

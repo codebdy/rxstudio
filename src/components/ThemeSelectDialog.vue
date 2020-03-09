@@ -7,12 +7,51 @@
       >×</span></div>
     <div class="dialog-body">
       <div class="tab-header">
-        <div>网站</div>
-        <div>H5单页</div>
-        <div>表单</div>
+        <div class="tab-label active">{{$t('theme.websites')}}</div>
+        <div class="tab-label">{{$t('theme.h5pages')}}</div>
+        <div class="tab-label">{{$t('theme.forms')}}</div>
       </div>
-      <div>
-        ddd
+      <div class="tab-body">
+        <div class="theme-item">
+          <img src="images/theme-agency.jpg" />
+          <div class="theme-title">Agency</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-testpools.jpg" />
+          <div class="theme-title">Testpools</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-sunvision.jpg" />
+          <div class="theme-title">Sucralose</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-warmy.jpg" />
+          <div class="theme-title">Warmy Candle</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-agency.jpg" />
+          <div class="theme-title">Agency</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-agency.jpg" />
+          <div class="theme-title">Agency</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-agency.jpg" />
+          <div class="theme-title">Agency</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-agency.jpg" />
+          <div class="theme-title">Agency</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-agency.jpg" />
+          <div class="theme-title">Agency</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-agency.jpg" />
+          <div class="theme-title">Agency</div>
+        </div>
       </div>
     </div>
     <div class="dialog-footer">
@@ -69,6 +108,7 @@ export default {
   justify-content: space-between;
   padding-left: 10px;
   font-size: 18px;
+  flex-shrink: 0;
 }
 
 .dialog-head .close-button{
@@ -86,35 +126,90 @@ export default {
 .dialog-body{
   flex: 1;
   display:flex;
+  height: 0;
   flex-flow: column;
-  padding:10px;
 }
 
 .dialog-body .tab-header{
   height: 30px;
   display: flex;
   flex-flow: row;
+  flex-shrink: 0;
+  margin:5px;
 }
 
-.dialog-body::-webkit-scrollbar {
+.dialog-body .tab-header .tab-label{
+  height: 30px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  margin-right:5px;
+  cursor: pointer;
+}
+
+.dialog-body .tab-header .tab-label:hover{
+  background: #f5f5f5;
+  color: #000;
+}
+
+.dialog-body .tab-header .tab-label.active{
+  border-radius: 3px;
+  background: #75b325;
+  color: #fff;
+}
+
+.dialog-body .tab-body{
+  flex: 1;
+  margin-top:10px;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.tab-body::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
   background: #aaa;
 }
-.dialog-body::-webkit-scrollbar-track {
+.tab-body::-webkit-scrollbar-track {
   border-radius: 0;
 }
-.dialog-body::-webkit-scrollbar-thumb {
+.tab-body::-webkit-scrollbar-thumb {
   border-radius: 0;
   background: #ccc;
   transition: all .2s;
 }
-.dialog-body::-webkit-scrollbar-thumb:hover {
+.tab-body::-webkit-scrollbar-thumb:hover {
   background-color: #ddd;
 }
 
-.dialog-body::-webkit-scrollbar-corner{
+.tab-body::-webkit-scrollbar-corner{
   background: transparent;
+}
+
+.theme-item{
+  width: 180px;
+  outline:#eee solid 1px;
+  margin:5px;
+}
+
+.theme-item:hover{
+  outline: #75b325 solid 2px;
+}
+
+
+.theme-item img{
+  width: 100%;
+}
+
+.theme-item .theme-title{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top:#eee solid 1px;
+  font-size: 16px;
 }
 
 .dialog-footer{
