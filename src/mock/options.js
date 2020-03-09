@@ -30,7 +30,7 @@ export default[
             top:'上',
             right:'右',
             bottom:'下',
-            left:'左',
+            left:"<i class='fas fa-file'></i>",
           },
         },
       },

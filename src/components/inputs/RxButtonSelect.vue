@@ -8,8 +8,8 @@
       v-for = "(name, value) in list"
       :class = "inputValue === value ? 'selected' : ''"
       @click = "itemClick(value)"
+      v-html = "name"
     >
-      {{name}}
     </div>
   </div>
 </template>
