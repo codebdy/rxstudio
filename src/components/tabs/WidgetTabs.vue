@@ -284,7 +284,6 @@ export default {
   }
 
   .widget-tabs .tab-body{
-    width: 100%;
     flex: 1;
     background: #323332;
     border-radius: 2px;
