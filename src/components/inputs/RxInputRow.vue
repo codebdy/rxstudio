@@ -13,6 +13,7 @@
 <script>
 import RxSwitch from './RxSwitch.vue'
 import RxSelect from './RxSelect.vue'
+import RxButtonSelect from './RxButtonSelect.vue'
 import RxInputRowGroup from './RxInputRowGroup'
 
 export default {
@@ -27,6 +28,7 @@ export default {
   components:{
     RxSwitch,
     RxSelect,
+    RxButtonSelect,
     RxInputRowGroup,
   },
   data () {
@@ -70,7 +72,7 @@ export default {
     color:#c2c2c2;
     font-size: 12px;
     width: 100px;
-    flex-shrink: 1;
+    flex-shrink: 0;
   }
   .rx-input-row.changed .label{
     color:#7c9161;

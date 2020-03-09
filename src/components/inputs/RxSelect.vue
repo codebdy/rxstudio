@@ -26,7 +26,6 @@ export default {
   name: 'RxSelect',
   props:{
     value:{ default:'' }, 
-    defaultValue:{ default:'' }, 
     list:{ default:{} },
   },
 
@@ -87,7 +86,7 @@ export default {
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
   border-radius: 3px;
   margin-right:2px;
   font-size: 16px;
@@ -108,7 +107,7 @@ export default {
   height: 24px;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
   border-radius: 3px;
 }
 
@@ -134,7 +133,7 @@ export default {
   display: flex;
   align-items: center;
   padding-left:10px;
-  background: #424242;
+  background: #515151;
   cursor: pointer;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3); 
   white-space:nowrap;

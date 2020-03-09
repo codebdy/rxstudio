@@ -3,6 +3,38 @@ export default[
     label:'Row选项',
     rows:[
       {
+        label:'标题',
+        value:'h2',
+        defaultValue:'h2',
+        inputName:'RxButtonSelect',
+        props:{
+          canClear:false,
+          list:{
+            h1:'H1',
+            h2:'H2',
+            h3:'H3',
+            h4:'H4',
+            h5:'H5',
+            h6:'H6',
+          },
+        },
+      },
+      {
+        label:'Border',
+        value:'left',
+        defaultValue:'left',
+        inputName:'RxButtonSelect',
+        props:{
+          canClear:true,
+          list:{
+            top:'上',
+            right:'右',
+            bottom:'下',
+            left:'左',
+          },
+        },
+      },
+      {
         label:'Gutters',
         value:'no-gutters',
         defaultValue:'no-gutters',
