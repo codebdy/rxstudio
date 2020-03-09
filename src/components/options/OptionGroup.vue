@@ -42,6 +42,7 @@
 import CollapsibleItem from '../accordion/CollapsibleItem.vue'
 import RxInputRow from '../inputs/RxInputRow.vue'
 import RxInputRowGroup from '../inputs/RxInputRowGroup.vue'
+import {valueEqual} from '../inputs/valueEqual'
 
 export default {
   name: 'OptionGroup',
@@ -66,13 +67,13 @@ export default {
     changed(){
       for(var i in this.inputValue.rows){
         let row = this.inputValue.rows[i]
-        if(row.value !== row.defaultValue){
+        if(!valueEqual(row.value, row.defaultValue)){
           return true
         }
 
         if(row.isRowGroup){
           for(var j in row.rows){
-            if(row.rows[j].value !== row.rows[j].defaultValue){
+            if(!valueEqual(row.rows[j].value, row.rows[j].defaultValue)){
               return true
             }
           }

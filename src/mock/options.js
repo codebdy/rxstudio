@@ -20,7 +20,23 @@ export default[
         },
       },
       {
-        label:'Border',
+        label:'Add Border',
+        value:[],
+        defaultValue:[],
+        inputName:'RxBorderInput',
+        props:{
+          addBorder:true,
+          list:{
+            all : 'border',
+            top : 'border-top',
+            right : 'border-right',
+            bottom : 'border-bottom',
+            left : 'border-left',
+          },
+        },
+      },
+      {
+        label:'Border2',
         value:'left',
         defaultValue:'left',
         inputName:'RxButtonSelect',

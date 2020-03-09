@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import {valueEqual} from './valueEqual'
 
 export default {
   name: 'RxInputRowGroup',
@@ -48,7 +49,7 @@ export default {
     changed(){
       for(var i in this.inputValue){
         let row = this.inputValue[i]
-        if(row.value !== row.defaultValue){
+        if(!valueEqual(row.value, row.defaultValue)){
           return true
         }
       }

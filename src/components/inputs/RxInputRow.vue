@@ -14,7 +14,10 @@
 import RxSwitch from './RxSwitch.vue'
 import RxSelect from './RxSelect.vue'
 import RxButtonSelect from './RxButtonSelect.vue'
+import RxBorderInput from './RxBorderInput.vue'
 import RxInputRowGroup from './RxInputRowGroup'
+
+import {valueEqual} from './valueEqual'
 
 export default {
   name: 'RxInputRow',
@@ -30,6 +33,7 @@ export default {
     RxSelect,
     RxButtonSelect,
     RxInputRowGroup,
+    RxBorderInput,
   },
   data () {
     return {
@@ -37,7 +41,7 @@ export default {
   },
   computed:{
     changed(){
-      return this.inputValue !== this.defaultValue
+      return !valueEqual(this.inputValue, this.defaultValue)
     },
 
     inputValue: {
