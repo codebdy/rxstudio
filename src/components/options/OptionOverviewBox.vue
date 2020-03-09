@@ -4,31 +4,24 @@
       <div class="tag-row">
         <div class="label">Tag</div> <input value="div" />
       </div>
-      <div>Classes:</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Classes</div>
-      <div>Attributes:</div>
+      <div class="class-area">
+        <div class="label"> Classes</div>
+        <RxLabelInput v-model="model"></RxLabelInput> 
+      </div>
+      <div>
+        <div class="label">Attributes</div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import RxLabelInput from '../inputs/RxLabelInput.vue'
 
 export default {
   name: 'OptionOverviewBox',
   components:{
+    RxLabelInput
   },
   props:{
     value:{ default:{} }, 
@@ -42,6 +35,11 @@ export default {
         this.$emit('input', val);
       },
     },
+  },
+  data () {
+    return {
+      model:[],
+    }
   },
   methods: {
   },
@@ -67,28 +65,32 @@ export default {
   .tag-row{
     display: flex;
     flex-flow: row;
-    align-items: center;
-    color: #f0f1ef;
     width:100%;
   }
 
-  .tag-row .label{
+  .option-overview-box .label{
     display: flex;
     height: 30px;
     align-items: center;
-    padding-left: 6px;
+    justify-content: flex-start;
     color:#c2c2c2;
     font-size: 12px;
-    width: 60px;
+    width: 70px;
     flex-shrink: 0;
   }
 
   .tag-row input{
-    width: 50px;
-    background: #424242;
+    background: rgba(0,0,0, 0.15);
     color: #d3d3d3;
     outline: transparent;
     border: 0;
+    padding: 3px;
+    width: 100px;
+  }
+
+  .class-area{
+    display: flex;
+    flex-flow: column;
   }
 
 </style>

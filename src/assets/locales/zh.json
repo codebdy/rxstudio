@@ -26,6 +26,7 @@
     "rename" : "重命名",
     "delete" : "删除",
     "reset":"重置",
-    "select":"-- 选择 --"
+    "select":"-- 选择 --",
+    "enter-message":"按回车结束输入"
   }
 }

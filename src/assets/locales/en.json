@@ -26,7 +26,8 @@
     "rename" : "Rename",
     "delete" : "Delete",
     "reset":"Reset",
-    "select":"-- Select --"
+    "select":"-- Select --",
+    "enter-message":"Press enter finished"
   }
 
 }
