@@ -256,11 +256,11 @@
             </tab>
             <tab :name="$t('widgets.anmation')"
                  :icon="'fab fa-windows'">
-              <h1>动画</h1>
+              <h1>动画，暂不实现</h1>
             </tab>
             <tab :name="$t('widgets.style')"
                  :icon="'fab fa-css3'">
-              <h1>Style</h1>
+              <StyleBox v-model="styles"></StyleBox>
             </tab>
           </WidgetTabs>
         </template>
@@ -294,6 +294,7 @@ import RxInputRow from './components/inputs/RxInputRow.vue'
 import OptionBox from './components/options/OptionBox.vue'
 import OptionOverviewBox from './components/options/OptionOverviewBox.vue'
 import CodeBox from './components/options/CodeBox.vue'
+import StyleBox from './components/options/StyleBox.vue'
 
 
 import files from './mock/files.js'
@@ -318,6 +319,7 @@ export default {
     OptionBox,
     OptionOverviewBox,
     CodeBox,
+    StyleBox,
   },
   data () {
     return {
@@ -326,6 +328,7 @@ export default {
       options:options,
       optionOverview : {},
       code:'<div></div>',
+      styles:{},
     }
   }
 }

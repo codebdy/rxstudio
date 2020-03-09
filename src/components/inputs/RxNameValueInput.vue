@@ -149,8 +149,9 @@ export default {
     width: 100%;
     display: flex;
     flex-flow: row;
-    height: 30px;
+    height: 24px;
     align-items: center;
+    font-size: 11px;
   }
 
   .name-value-row .name-input input, .name-value-row .value-input input{
