@@ -28,5 +28,10 @@
     "reset":"重置",
     "select":"-- 选择 --",
     "enter-message":"按回车结束输入"
+  },
+  "theme":{
+    "theme-select":"选择模板",
+    "cancel" : "取消",
+    "select" : "选择"
   }
 }

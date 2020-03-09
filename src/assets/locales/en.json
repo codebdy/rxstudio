@@ -28,6 +28,11 @@
     "reset":"Reset",
     "select":"-- Select --",
     "enter-message":"Press enter finished"
+  },
+  "theme":{
+    "theme-select":"Select A Theme",
+    "cancel" : "Cancel",
+    "select" : "Select"
   }
 
 }

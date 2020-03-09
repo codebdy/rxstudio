@@ -48,6 +48,7 @@ export default {
     outline: 0;
     background: rgba(0,0,0, 0.15);
     padding: 5px;
+    font-size: 12px;
   }
 
 </style>

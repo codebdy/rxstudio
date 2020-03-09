@@ -1,7 +1,9 @@
 <template>
   <div class="toolbar">
     <div class="left">
-      <div class="button theme"> 
+      <div class="button theme"
+        @click="themeDialog = true"
+      > 
         <i class="fas fa-layer-group"></i> 
         {{$t('toolbar.theme')}}
       </div>
@@ -30,14 +32,23 @@
       </div>
       <a class="button github-link" target="_blank" href="https://github.com/vularsoft/studio-ui"><i class="fab fa-github"></i> Github</a>
     </div>
+
+    <ThemeSelectDialog v-model="themeDialog">
+
+    </ThemeSelectDialog>
   </div>
 </template>
 
 <script>
+import ThemeSelectDialog from './ThemeSelectDialog.vue'
 export default {
   name: 'Toolbar',
+  components:{
+    ThemeSelectDialog,
+  },
   data () {
     return {
+      themeDialog:false,
     }
   }
 }
