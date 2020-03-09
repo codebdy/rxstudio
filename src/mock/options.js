@@ -21,11 +21,28 @@ export default[
       },
       {
         label:'Add Border',
-        value:[],
-        defaultValue:[],
+        value:['border-right'],
+        defaultValue:['border-top', 'border-left'],
         inputName:'RxBorderInput',
         props:{
           addBorder:true,
+          list:{
+            all : 'border',
+            top : 'border-top',
+            right : 'border-right',
+            bottom : 'border-bottom',
+            left : 'border-left',
+          },
+        },
+      },
+
+      {
+        label:'Remove Border',
+        value:['border-right'],
+        defaultValue:['border-top', 'border-left'],
+        inputName:'RxBorderInput',
+        props:{
+          addBorder:false,
           list:{
             all : 'border',
             top : 'border-top',

@@ -9,4 +9,11 @@ function valueEqual(a, b){
   }
 }
 
-export{valueEqual}
+function cloneValue(val){
+  if(Array.isArray(val)){
+    return val.concat()
+  }
+  return val
+}
+
+export{valueEqual, cloneValue}

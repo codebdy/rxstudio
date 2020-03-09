@@ -42,7 +42,7 @@
 import CollapsibleItem from '../accordion/CollapsibleItem.vue'
 import RxInputRow from '../inputs/RxInputRow.vue'
 import RxInputRowGroup from '../inputs/RxInputRowGroup.vue'
-import {valueEqual} from '../inputs/valueEqual'
+import {valueEqual, cloneValue} from '../inputs/valueOperate'
 
 export default {
   name: 'OptionGroup',
@@ -91,11 +91,11 @@ export default {
       this.inputValue.rows.forEach(row=>{
         if(row.isRowGroup){
           row.rows.forEach(subRow =>{
-            subRow.value = subRow.defaultValue
+            subRow.value = cloneValue(subRow.defaultValue)
           })
         }
         else{
-          row.value = row.defaultValue
+          row.value = cloneValue(row.defaultValue)
         }
       })
       event.stopPropagation()

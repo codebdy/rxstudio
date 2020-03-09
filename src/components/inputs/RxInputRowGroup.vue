@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {valueEqual} from './valueEqual'
+import {valueEqual, cloneValue} from './valueOperate'
 
 export default {
   name: 'RxInputRowGroup',
@@ -72,7 +72,7 @@ export default {
 
     resetAll(event){
       for(var i in this.inputValue){
-        this.inputValue[i].value = this.inputValue[i].defaultValue
+        this.inputValue[i].value = cloneValue(this.inputValue[i].defaultValue)
       }
       event.stopPropagation()
     },

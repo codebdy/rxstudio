@@ -1,17 +1,34 @@
 <template>
-  <div class="border-input" :class="addBorder ? 'add-border' :'remove-border'">
+  <div class="border-input" 
+    :class="{
+      'add-border' : addBorder,
+      'remove-border': !addBorder,
+      'select-top':topSelected,
+      'select-right':rightSelected,
+      'select-bottom':bottomSelected,
+      'select-left':leftSelected,
+    }"
+  >
     <div class="view">
       <div>
-        <div class="view-button top"></div>
+        <div class="view-button top"
+          @click="topClick"
+        ></div>
       </div>
       <div>
-        <div class="view-button right"></div>
+        <div class="view-button right"
+          @click="rightClick"
+        ></div>
       </div>
       <div>
-        <div class="view-button bottom"></div>
+        <div class="view-button bottom"
+          @click="bottomClick"
+        ></div>
       </div>
       <div>
-        <div class="view-button left"></div>
+        <div class="view-button left"
+          @click="leftClick"
+        ></div>
       </div>
     </div>
   </div>
@@ -39,24 +56,102 @@ export default {
 
   data () {
     return {
+      topSelected:false,
+      rightSelected:false,
+      bottomSelected:false,
+      leftSelected:false,
     }
   },
 
   methods: {
-    clear(event){
-      this.inputValue = ''
+    topClick(){
+      this.topSelected = !this.topSelected
+      this.changeInput()
     },
 
-    itemClick(value){
-      this.inputValue = value
+    rightClick(){
+      this.rightSelected = !this.rightSelected
+      this.changeInput()
     },
+
+    bottomClick(){
+      this.bottomSelected = !this.bottomSelected
+      this.changeInput()
+    },
+
+    leftClick(){
+      this.leftSelected = !this.leftSelected
+      this.changeInput()
+    },
+
+    changeInput(){
+      this.inputValue.length = 0;
+      if(this.topSelected 
+         && this.rightSelected
+         && this.bottomSelected
+         && this.leftSelected ){
+        this.inputValue.push(this.list.all)
+        return
+      }
+      if(this.topSelected){
+        this.inputValue.push(this.list.top)
+      }
+      if(this.rightSelected){
+        this.inputValue.push(this.list.right)
+      }
+      if(this.bottomSelected){
+        this.inputValue.push(this.list.bottom)
+      }
+      if(this.leftSelected){
+        this.inputValue.push(this.list.left)
+      }
+    },
+
+    showValue(){
+      this.topSelected = false
+      this.rightSelected = false
+      this.bottomSelected = false
+      this.leftSelected = false
+
+      this.value.forEach(val=>{
+        if(val === this.list.all){
+          this.topSelected = true
+          this.rightSelected = true
+          this.bottomSelected = true
+          this.leftSelected = true
+        }
+
+        if(val === this.list.top){
+          this.topSelected = true
+        }
+        if(val === this.list.right){
+          this.rightSelected = true
+        }
+        if(val === this.list.bottom){
+          this.bottomSelected = true
+        }
+        if(val === this.list.left){
+          this.leftSelected = true
+        }
+      })
+    }
   },
+  mounted () {
+    this.showValue()
+  },
+
+  watch: {
+    value() {
+      this.showValue()
+    }
+  }
+
 }
 </script>
 
 <style>
   .border-input{
-    padding:5px 0;
+    padding:5px;
   }
 
   .border-input .view{

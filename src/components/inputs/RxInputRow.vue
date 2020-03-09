@@ -17,7 +17,7 @@ import RxButtonSelect from './RxButtonSelect.vue'
 import RxBorderInput from './RxBorderInput.vue'
 import RxInputRowGroup from './RxInputRowGroup'
 
-import {valueEqual} from './valueEqual'
+import {valueEqual} from './valueOperate'
 
 export default {
   name: 'RxInputRow',
