@@ -252,7 +252,7 @@
             </tab>
             <tab :name="$t('widgets.code')"
                  :icon="'fas fa-code'">
-              <h1>code List</h1>
+              <CodeBox v-model="code"></CodeBox>
             </tab>
             <tab :name="$t('widgets.anmation')"
                  :icon="'fab fa-windows'">
@@ -293,6 +293,8 @@ import NodeTree from './components/tree/NodeTree.vue'
 import RxInputRow from './components/inputs/RxInputRow.vue'
 import OptionBox from './components/options/OptionBox.vue'
 import OptionOverviewBox from './components/options/OptionOverviewBox.vue'
+import CodeBox from './components/options/CodeBox.vue'
+
 
 import files from './mock/files.js'
 import nodes from './mock/nodes.js'
@@ -315,13 +317,15 @@ export default {
     RxInputRow,
     OptionBox,
     OptionOverviewBox,
+    CodeBox,
   },
   data () {
     return {
       files:files,
       nodes:nodes,
       options:options,
-      optionOverview : {}
+      optionOverview : {},
+      code:'<div></div>',
     }
   }
 }
