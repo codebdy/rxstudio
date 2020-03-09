@@ -30,11 +30,8 @@
 import {addToArray, removeFromArray} from './valueOperate'
 
 export default {
-  name: 'RxSwitch',
   props:{
-    value:{ default:'' }, 
-    onValue:{ default:'on' },
-    offValue:{ default:'off' },
+    value:{ default:[] }, 
   },
   computed:{
     inputValue: {
@@ -105,14 +102,15 @@ export default {
   .label-list .add-button{
     background: rgba(255,255,255, 0.15);
     width: 24px;
-    height: 24px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 3px;
     margin: 1px;
+    margin-top:3px;
     font-size: 16px;
-    padding-bottom:2px;
+    padding-bottom:3px;
     cursor: pointer;
   }
 

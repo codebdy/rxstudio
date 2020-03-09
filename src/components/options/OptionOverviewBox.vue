@@ -10,6 +10,7 @@
       </div>
       <div>
         <div class="label">Attributes</div>
+        <RxNameValueInput v-model="attributes"></RxNameValueInput>
       </div>
     </div>
   </div>
@@ -17,11 +18,13 @@
 
 <script>
 import RxLabelInput from '../inputs/RxLabelInput.vue'
+import RxNameValueInput from '../inputs/RxNameValueInput.vue'
 
 export default {
   name: 'OptionOverviewBox',
   components:{
-    RxLabelInput
+    RxLabelInput,
+    RxNameValueInput
   },
   props:{
     value:{ default:{} }, 
@@ -39,6 +42,7 @@ export default {
   data () {
     return {
       model:[],
+      attributes:{},
     }
   },
   methods: {
