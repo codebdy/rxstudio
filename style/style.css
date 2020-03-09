@@ -327,10 +327,6 @@ a:hover{
   flex-flow: column;
 }
 
-.vular-studio .left-inner .left-top{
-  flex: 1;
-}
-
 .vular-studio .left-inner .bottom-area{
   display: flex;
   flex-flow: column;
@@ -350,12 +346,9 @@ a:hover{
   width: 100%;
 }
 
-.vular-studio .right-inner .right-top{
-  flex: 1;
-}
-
-.vular-studio .right-inner .right-bottom{
-  height: 280px;
+.vular-studio .right-inner .bottom-area{
+  display: flex;
+  flex-flow: column;
 }
 
 /*==node tree=======>*/

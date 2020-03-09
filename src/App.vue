@@ -269,7 +269,7 @@
             <tab :name="$t('widgets.overview')"
                  :icon="'fas fa-th-list'" 
                  :selected="true">
-              <h1>Over view</h1>
+              <OptionOverviewBox v-model="optionOverview"></OptionOverviewBox>
             </tab>
           </WidgetTabs>
         </template>
@@ -292,6 +292,7 @@ import MouseOverPop from './components/MouseOverPop.vue'
 import NodeTree from './components/tree/NodeTree.vue'
 import RxInputRow from './components/inputs/RxInputRow.vue'
 import OptionBox from './components/options/OptionBox.vue'
+import OptionOverviewBox from './components/options/OptionOverviewBox.vue'
 
 import files from './mock/files.js'
 import nodes from './mock/nodes.js'
@@ -313,12 +314,14 @@ export default {
     NodeTree,
     RxInputRow,
     OptionBox,
+    OptionOverviewBox,
   },
   data () {
     return {
       files:files,
       nodes:nodes,
       options:options,
+      optionOverview : {}
     }
   }
 }
