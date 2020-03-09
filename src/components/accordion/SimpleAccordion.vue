@@ -100,7 +100,7 @@ export default {
 
   .simple-accordion .item-body{
     flex: 1;
-    overflow: auto;
+    /*overflow: auto;*/
     /*border-top:#282828 solid 1px;*/
     padding: 5px;
   }
