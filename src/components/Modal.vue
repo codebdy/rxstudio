@@ -68,5 +68,7 @@ export default {
   transform: all 0.3s;
   display: flex;
   flex-flow: column;
+  color: #474747;
 }
+
 </style>

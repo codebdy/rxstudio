@@ -36,5 +36,10 @@
     "websites" : "网站",
     "h5pages" : "H5单页",
     "forms" : "表单"
+  },
+  "about":{
+    "about-title":"关于",
+    "close" : "关闭",
+    "content" : "RxEditor 的界面原型，Github:"
   }
 }

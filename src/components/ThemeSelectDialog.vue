@@ -1,5 +1,5 @@
 <template>
-  <Modal v-model="inputValue" :size="'large'" :class="'theme-select-dialog'">
+  <Modal v-model="inputValue" :size="'large'">
     <div class="dialog-head">{{$t('theme.theme-select')}} 
       <span 
         class="close-button"
@@ -37,8 +37,16 @@
           <div class="theme-title">Agency</div>
         </div>
         <div class="theme-item">
-          <img src="images/theme-agency.jpg" />
-          <div class="theme-title">Agency</div>
+          <img src="images/theme-testpools.jpg" />
+          <div class="theme-title">Testpools</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-sunvision.jpg" />
+          <div class="theme-title">Sucralose</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-warmy.jpg" />
+          <div class="theme-title">Warmy Candle</div>
         </div>
         <div class="theme-item">
           <img src="images/theme-agency.jpg" />
@@ -47,6 +55,18 @@
         <div class="theme-item">
           <img src="images/theme-agency.jpg" />
           <div class="theme-title">Agency</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-testpools.jpg" />
+          <div class="theme-title">Testpools</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-sunvision.jpg" />
+          <div class="theme-title">Sucralose</div>
+        </div>
+        <div class="theme-item">
+          <img src="images/theme-warmy.jpg" />
+          <div class="theme-title">Warmy Candle</div>
         </div>
         <div class="theme-item">
           <img src="images/theme-agency.jpg" />
@@ -96,9 +116,6 @@ export default {
 </script>
 
 <style>
-.theme-select-dialog{
-  color: #474747;
-}
 .dialog-head{
   height: 50px;
   border-bottom:#ddd solid 1px;
@@ -170,18 +187,18 @@ export default {
 .tab-body::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
-  background: #aaa;
+  background: #ddd;
 }
 .tab-body::-webkit-scrollbar-track {
   border-radius: 0;
 }
 .tab-body::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background: #ccc;
+  background: #aaa;
   transition: all .2s;
 }
 .tab-body::-webkit-scrollbar-thumb:hover {
-  background-color: #ddd;
+  background-color: #bbb;
 }
 
 .tab-body::-webkit-scrollbar-corner{
@@ -189,7 +206,7 @@ export default {
 }
 
 .theme-item{
-  width: 180px;
+  width: 186px;
   outline:#eee solid 1px;
   margin:5px;
 }

@@ -26,7 +26,9 @@
         <i class="fas fa-download"></i> 
         {{$t('toolbar.download')}}
       </div>
-      <div class="button about"> 
+      <div class="button about"
+        @click = "aboutDialog = true"
+      > 
         <i class="fas fa-question-circle"></i> 
         {{$t('toolbar.about')}}
       </div>
@@ -34,21 +36,26 @@
     </div>
 
     <ThemeSelectDialog v-model="themeDialog">
-
     </ThemeSelectDialog>
+    <AboutDialog v-model="aboutDialog">
+    </AboutDialog>
+    
   </div>
 </template>
 
 <script>
 import ThemeSelectDialog from './ThemeSelectDialog.vue'
+import AboutDialog from './AboutDialog.vue'
 export default {
   name: 'Toolbar',
   components:{
     ThemeSelectDialog,
+    AboutDialog,
   },
   data () {
     return {
       themeDialog:false,
+      aboutDialog:false,
     }
   }
 }
