@@ -1,6 +1,7 @@
 <template>
   <Modal v-model="inputValue" :size="'large'">
-    <div class="dialog-head">{{$t('theme.theme-select')}} 
+    <div class="dialog-head">
+      <div><i class="fas fa-layer-group"></i> {{$t('theme.theme-select')}} </div>
       <span 
         class="close-button"
         @click="inputValue = false"

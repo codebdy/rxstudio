@@ -68,19 +68,19 @@
                   <template #heading><span>栅格</span> <small>Bootstrap 4</small></template>
                   <template #body>
                     <div class="toolbox-element">
-                      容器
+                      <i class="fas fa-file"></i> 容器
                       
                     </div>
                     <div class="toolbox-element">
-                      Row
+                      <i class="fas fa-file"></i> Row
                       
                     </div>
                     <div class="toolbox-element">
-                      Column
+                      <i class="fas fa-file"></i> Column
                       
                     </div>
                     <div class="toolbox-element">
-                      Row Break
+                      <i class="fas fa-file"></i> Row Break
                       
                     </div>
                   </template>
@@ -335,5 +335,8 @@ export default {
 </script>
 
 <style>
-
+.toolbox-element{
+  margin-left: 20px;
+  line-height: 30px;
+}
 </style>
