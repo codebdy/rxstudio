@@ -1,9 +1,6 @@
 # studio-ui
 
-> 本程序是HTML可视化工具。  
-> RXEditor是一个开源的，可视化的，HTML编辑类库，基于Bootstrap实现。  
-> RXEditor 代码地址：https://github.com/vularsoft/rxeditor  
-> 演示地址：https://vular.cn/rxeditor  
+>本项目代码暂停维护，转至：https://github.com/vularsoft/rxeditor
 
 
 ## Build Setup
